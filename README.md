@@ -14,7 +14,7 @@ The following analyses examine agricultural commodity loss, at a county level, f
 
 Data provided include climate correlations, climate matrices, climatological data taken from Abatzoglou's (2013) GRIDMET daily downscaled climate data, as well as wheat commodity pricing data at a county level.
 
-User should only need to download the attached zip file, decompress, and then run the Rmd from the location of data download.  The Rmd contains code to expand any zip files, and load data needed to re-generate the Rmd output (which is included as an html file).
+User should only need to run the .Rmd, which contains code to expand any zip files, and load data needed to re-generate the Rmd output (which is output as a .pdf)
 
 ## Description of the Data and file structure:
 
