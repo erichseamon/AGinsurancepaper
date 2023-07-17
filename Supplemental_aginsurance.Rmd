@@ -26,9 +26,6 @@ mainfont: serif
 ```{r setup, include=FALSE}
 
 knitr::opts_chunk$set(echo = TRUE, fig.align = "center", out.width='400px', out.height='700px', dpi=400, dev = "cairo_pdf")
-
-#rmarkdown::render(input = "/dmine/code/git/seamon_dissertation/appendices/seamon_PHD_appendix_B.Rmd", output_file = paste("/dmine/code/git/seamon_dissertation/appendices/seamon_PHD_appendix_B.html", sep=""))
-
 usePackage <- function(p) {
     if (!is.element(p, installed.packages()[,1]))
         install.packages(p, dep = TRUE, repos = "http://cran.us.r-project.org")
@@ -192,10 +189,10 @@ usePackage("repmis")
 #------add crop insurance data
 
 #URL <- "https://raw.githubusercontent.com/erichseamon/seamon_dissertation/master/data/RMA_originaldata/RMA_originaldata_txt.zip"
-#destfile <- "/tmp/seamon/RMA_originaldata_txt.zip"
-#download.file(URL, destfile)
-#outDir<-"/tmp/seamon/RMA_originaldata/"
-#unzip(destfile,exdir=outDir)
+destfile <- "./data/RMA_originaldata/RMA_originaldata_txt.zip"
+#download.file(destfile, destfile)
+outDir<-"/tmp/seamon/RMA_originaldata/"
+unzip(destfile,exdir=outDir)
 
 
 rma1989 <- read.csv("/tmp/seamon/RMA_originaldata/1989.txt", sep = "|", header = FALSE, strip.white = TRUE)
@@ -426,10 +423,10 @@ usePackage("raster")
 usePackage("htmltools")
 
 #URL <- "https://raw.githubusercontent.com/erichseamon/seamon_dissertation/master/data/states/states_conus.zip"
-#destfile <- "/tmp/seamon/states_conus.zip"
+destfile <- "/data/states/states_conus.zip"
 #download.file(URL, destfile)
-#outDir<-"/tmp/seamon"
-#unzip(destfile,exdir=outDir)
+outDir<-"/tmp/seamon"
+unzip(destfile,exdir=outDir)
 
 states <- readShapePoly('/tmp/seamon/states_conus/states_conus.shp',
                         proj4string=CRS
@@ -438,10 +435,10 @@ projection = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
 
 
 #URL <- "https://raw.githubusercontent.com/erichseamon/seamon_dissertation/master/data/states/threestate_boundary.zip"
-#destfile <- "/tmp/seamon/threestate_boundary.zip"
+destfile <- "./data/counties/threestate_boundary.zip"
 #download.file(URL, destfile)
-#outDir<-"/tmp/seamon"
-#unzip(destfile,exdir=outDir)
+outDir<-"/tmp/seamon"
+unzip(destfile,exdir=outDir)
     
 threestates <- readShapePoly('/tmp/seamon/threestate_boundary/threestate_boundary.shp', 
                                   proj4string=CRS
@@ -452,10 +449,10 @@ threestates <- readShapePoly('/tmp/seamon/threestate_boundary/threestate_boundar
 #setwd("/dmine/data/counties/")
         
 #URL <- "https://raw.githubusercontent.com/erichseamon/seamon_dissertation/master/data/counties/threestate_willamette.zip"
-#destfile <- "/tmp/seamon/threestate_willamette.zip"
+destfile <- "./data/counties/threestate_willamette.zip"
 #download.file(URL, destfile)
-#outDir<-"/tmp/seamon"
-#unzip(destfile,exdir=outDir)
+outDir<-"/tmp/seamon"
+unzip(destfile,exdir=outDir)
 
 counties_willamette <- readShapePoly('/tmp/seamon/threestate_willamette/threestate_willamette.shp',
                      proj4string=CRS
@@ -463,10 +460,10 @@ counties_willamette <- readShapePoly('/tmp/seamon/threestate_willamette/threesta
 projection = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
 
 #URL <- "https://raw.githubusercontent.com/erichseamon/seamon_dissertation/master/data/counties/threestate_southernID.zip"
-#destfile <- "/tmp/seamon/threestate_southernID.zip"
+destfile <- "./data/counties/threestate_southernID.zip"
 #download.file(URL, destfile)
-#outDir<-"/tmp/seamon"
-#unzip(destfile,exdir=outDir)
+outDir<-"/tmp/seamon"
+unzip(destfile,exdir=outDir)
 
 counties_ID <- readShapePoly('/tmp/seamon/threestate_southernID/threestate_southernID.shp',
                      proj4string=CRS
@@ -474,10 +471,10 @@ counties_ID <- readShapePoly('/tmp/seamon/threestate_southernID/threestate_south
 projection = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
 
 #URL <- "https://raw.githubusercontent.com/erichseamon/seamon_dissertation/master/data/counties/threestate_palouse.zip"
-#destfile <- "/tmp/seamon/threestate_palouse.zip"
+destfile <- "./data/counties/threestate_palouse.zip"
 #download.file(URL, destfile)
-#outDir<-"/tmp/seamon"
-#unzip(destfile,exdir=outDir)
+outDir<-"/tmp/seamon"
+unzip(destfile,exdir=outDir)
 
 counties_palouse <- readShapePoly('/tmp/seamon/threestate_palouse/threestate_palouse.shp',
                      proj4string=CRS
@@ -571,10 +568,10 @@ usePackage("maps")
 usePackage("mapdata")
 
 #URL <- "https://raw.githubusercontent.com/erichseamon/seamon_dissertation/master/data/states/states_conus.zip"
-#destfile <- "/tmp/seamon/states_conus.zip"
+destfile <- "./data/states/states_conus.zip"
 #download.file(URL, destfile)
-#outDir<-"/tmp/seamon"
-#unzip(destfile,exdir=outDir)
+outDir<-"/tmp/seamon"
+unzip(destfile,exdir=outDir)
 
 states <- readShapePoly('/tmp/seamon/states_conus/states_conus.shp',
                         proj4string=CRS
@@ -587,10 +584,10 @@ projection = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
 
 
 #URL <- "https://raw.githubusercontent.com/erichseamon/seamon_dissertation/master/data/counties/threestate_palouse.zip"
-#destfile <- "/tmp/seamon/threestate_palouse.zip"
+destfile <- "./data/counties/threestate_palouse.zip"
 #download.file(URL, destfile)
-#outDir<-"/tmp/seamon"
-#unzip(destfile,exdir=outDir)
+outDir<-"/tmp/seamon"
+unzip(destfile,exdir=outDir)
 
 counties <- readShapePoly('/tmp/seamon/threestate_palouse/threestate_palouse.shp',
                      proj4string=CRS
@@ -828,8 +825,9 @@ tt3 <- ttheme_default(core=list(fg_params=list(hjust=0, x=0.1)),
 YYY1$loss <- round(YYY1$loss, 0)
 #grid.table(YYY1, theme = tt3, rows = NULL)
 
+YYY1$damagecause <- as.factor(YYY1$damagecause)
 
-levels(YYY1$damagecause)[10] <- "Excessive Moisture"
+levels(YYY1$damagecause)[8] <- "Excessive Moisture"
 par(mar=c(14, 8.1, 7, 0), family = 'serif', mgp=c(2, 1, 0), las=0)
 #levels(YYY1$commodity)[1] <- "ADJ GROSS REVENUE"
 barplot(YYY1$loss, names.arg = YYY1$damagecause, las = 3, main = "", yaxt="n", col = "lightblue", xlab = "", cex.main = 1, cex.lab = 1, cex.names = 1, font.lab = 1, font.axis = 1) 
@@ -1594,7 +1592,10 @@ tt3 <- ttheme_default(core=list(fg_params=list(hjust=0, x=0.1)),
 YYY1<- YYY1[seq(dim(YYY1)[1],1),]
 
 YYY2 <- YYY1
-levels(YYY2$commodity)[10] <- "Excessive Moisture"
+
+YYY2$commodity <- as.factor(YYY2$commodity)
+
+levels(YYY2$commodity)[5] <- "Excessive Moisture"
 YYY2$loss <- format(YYY2$loss,big.mark=",",scientific=FALSE)
 YYY2$loss <- paste("$", YYY2$loss, sep="")
 YYY2$loss <- gsub(" ", "", YYY2$loss, fixed = TRUE)
@@ -1606,8 +1607,11 @@ colnames(YYY2) <- c("damage cause", "loss")
 #grid.table(YYY1, theme = tt3)
 #kable(YYY1, format = "html", row.names = FALSE) %>% kable_styling(bootstrap_options = c("striped", "hover", "bordered"), full_width = FALSE)
 
+
+YYY1$commodity <- as.factor(YYY1$commodity)
+
 par(mar=c(10, 9.8, 6, 2.1), family = 'serif', mgp=c(2, 1, 0), las=0)
-levels(YYY1$commodity)[10] <- "Excessive Moisture"
+levels(YYY1$commodity)[5] <- "Excessive Moisture"
 barplot(YYY1$loss, names.arg = YYY1$commodity, cex.names = 1, las = 3, yaxt="n", col = "lightblue")
 pts <- pretty(YYY1$loss / 1000000)
 pts2 <- pretty(YYY1$loss)
@@ -1920,7 +1924,9 @@ states <- readShapePoly('/tmp/seamon/states_conus/states_conus.shp',
 
 APPLES <- subset(RMA_damage_IPNW, commodity == "APPLES")
 
-levels(APPLES$damagecause)[10] <- "Excessive Moisture"
+APPLES$damagecause <- as.factor(APPLES$damagecause)
+
+levels(APPLES$damagecause)[4] <- "Excessive Moisture"
 APPLES$damagecause <- factor(APPLES$damagecause)
 
 APPLES_damage <- subset(APPLES, damagecause == "Hail" | damagecause == "Frost" | damagecause == "Freeze" | damagecause == "Cold Wet Weather" | damagecause == "Wind/Excess Wind" | damagecause == "Heat")
@@ -2019,7 +2025,9 @@ print(gg2)
 
 \newpage
 
-```{r message=FALSE, warning=FALSE, echo= FALSE, error=TRUE, fig.width = 8, fig.height = 8, fig.cap=paste("Inland Pacific Northwest agricultural insurance loss due to hail, frost, and freeze, for apples, by county, 2001 to 2015.")}
+```{r message=FALSE, warning=FALSE, echo= FALSE, error=FALSE, fig.width = 8, fig.height = 8, fig.cap=paste("Inland Pacific Northwest agricultural insurance loss due to hail, frost, and freeze, for apples, by county, 2001 to 2015.")}
+
+options(warn=-1)
 
 usePackage("RgoogleMaps")
 usePackage("sp")
@@ -2076,13 +2084,23 @@ labels2=as.character(labels2)
 labels2 <- paste(labels2, "M", sep="")
 
 #nc.labels <- maptools::pointLabel(x=coordinates(labels)[,1],y=coordinates(labels)[,2],labels=labels2)
-nc.labels <- as.data.frame(cbind(coordinates(labels[1])[,1], coordinates(labels[,2])[,2]))
-colnames(nc.labels) <- c("x", "y")
-nc.labels <- as.list(nc.labels)
 
-stateline <- list("sp.lines", as(states, 'SpatialLines'), col = gray(0.4), lwd = 3)
-locs.labels <- getSpPPolygonsLabptSlots(county_apples_hailfrostfreeze)
-labels.white.panel <- list("panel.text",nc.labels$x-.01,nc.labels$y-.01,labels=labels2,col="black",cex=1)
+
+
+# nc.labels <- as.data.frame(cbind(coordinates(labels[1])[,1], coordinates(labels[,2])[,2]))
+# colnames(nc.labels) <- c("x", "y")
+# nc.labels <- as.list(nc.labels)
+# 
+# stateline <- list("sp.lines", as(states, 'SpatialLines'), col = gray(0.4), lwd = 3)
+# locs.labels <- getSpPPolygonsLabptSlots(county_apples_hailfrostfreeze)
+# 
+# nc.labels$x <- as.numeric(nc.labels$x)
+# nc.labels$y <- as.numeric(nc.labels$y)
+# 
+# labels.white.panel <- list("panel.text",nc.labels$x-.01,nc.labels$y-.01,labels=labels2,col="black",cex=1)
+
+
+
 #spplot(county_apples_hailfrostfreeze, zcol = "loss", sp.layout=list(list(labels.white.panel), list(states, fill="white", first=TRUE), stateline), cuts = length(which(county_apples_hailfrostfreeze$loss != "NA"))-1, col.regions = brewer.pal(100, "Blues"), main = "Apples - insurance loss due to hail, frost, freeze: 2001 to 2015") 
 
 par(mar=c(8.5, 6.1, 6, 2.1), family = 'serif', mgp=c(5, 1, 0), las=0)
@@ -2093,6 +2111,8 @@ axis(2, las = 1, at = pts2, cex.axis = 1, labels = paste(pts, "M", sep = ""))
 graphics::title(main="IPNW apples insurance loss due to hail, frost, and freeze\n2001 to 2015", line = 2, adj = 0, cex.main = 1.5)
 graphics::title(xlab="Counties", line=7, cex.lab = 1)
 graphics::title(ylab="Apples insurance claim loss ($)", line=4, cex.lab = 1)
+
+options(warn=0)
 
 ```
 
@@ -2115,13 +2135,18 @@ labels2=as.character(labels2)
 labels2 <- paste(labels2, "M", sep="")
 
 #nc.labels <- maptools::pointLabel(x=coordinates(labels)[,1],y=coordinates(labels)[,2],labels=labels2)
-nc.labels <- as.data.frame(cbind(coordinates(labels[1])[,1], coordinates(labels[,2])[,2]))
-colnames(nc.labels) <- c("x", "y")
-nc.labels <- as.list(nc.labels)
 
-stateline <- list("sp.lines", as(states, 'SpatialLines'), col = gray(0.4), lwd = 3)
-locs.labels <- getSpPPolygonsLabptSlots(county_apples_hailfrostfreeze2013)
-labels.white.panel <- list("panel.text",nc.labels$x-.01,nc.labels$y-.01,labels=labels2,col="black",cex=1)
+
+# nc.labels <- as.data.frame(cbind(coordinates(labels[1])[,1], coordinates(labels[,2])[,2]))
+# colnames(nc.labels) <- c("x", "y")
+# nc.labels <- as.list(nc.labels)
+# 
+# stateline <- list("sp.lines", as(states, 'SpatialLines'), col = gray(0.4), lwd = 3)
+# locs.labels <- getSpPPolygonsLabptSlots(county_apples_hailfrostfreeze2013)
+# labels.white.panel <- list("panel.text",nc.labels$x-.01,nc.labels$y-.01,labels=labels2,col="black",cex=1)
+
+
+
 #spplot(county_apples_hailfrostfreeze2013, zcol = "loss", sp.layout=list(list(labels.white.panel), list(states, fill="white", first=TRUE), stateline), cuts = length(which(county_apples_hailfrostfreeze2013$loss != "NA"))-1, col.regions = brewer.pal(100, "Blues"), main = "Apples - insurance loss due to hail, frost, freeze: 2001 to 2015") 
 
 # pal <- colorNumeric(colorRampPalette(c("lightblue", "blue"))(11), na.color = "#ffffff",
@@ -2183,13 +2208,17 @@ labels2=as.character(labels2)
 labels2 <- paste(labels2, "M", sep="")
 
 #nc.labels <- maptools::pointLabel(x=coordinates(labels)[,1],y=coordinates(labels)[,2],labels=labels2)
-nc.labels <- as.data.frame(cbind(coordinates(labels[1])[,1], coordinates(labels[,2])[,2]))
-colnames(nc.labels) <- c("x", "y")
-nc.labels <- as.list(nc.labels)
 
-stateline <- list("sp.lines", as(states, 'SpatialLines'), col = gray(0.4), lwd = 3)
-locs.labels <- getSpPPolygonsLabptSlots(county_apples_hailfrostfreeze2012)
-labels.white.panel <- list("panel.text",nc.labels$x-.01,nc.labels$y-.01,labels=labels2,col="black",cex=1)
+
+# nc.labels <- as.data.frame(cbind(coordinates(labels[1])[,1], coordinates(labels[,2])[,2]))
+# colnames(nc.labels) <- c("x", "y")
+# nc.labels <- as.list(nc.labels)
+# 
+# stateline <- list("sp.lines", as(states, 'SpatialLines'), col = gray(0.4), lwd = 3)
+# locs.labels <- getSpPPolygonsLabptSlots(county_apples_hailfrostfreeze2012)
+# labels.white.panel <- list("panel.text",nc.labels$x-.01,nc.labels$y-.01,labels=labels2,col="black",cex=1)
+
+
 #spplot(county_apples_hailfrostfreeze2012, zcol = "loss", sp.layout=list(list(labels.white.panel), list(states, fill="white", first=TRUE), stateline), cuts = length(which(county_apples_hailfrostfreeze2012$loss != "NA"))-1, col.regions = brewer.pal(100, "Blues"), main = "Apples - insurance loss due to hail, frost, freeze: 2001 to 2015") 
 
 #-2012
@@ -2253,13 +2282,18 @@ labels2=as.character(labels2)
 labels2 <- paste(labels2, "M", sep="")
 
 #nc.labels <- maptools::pointLabel(x=coordinates(labels)[,1],y=coordinates(labels)[,2],labels=labels2)
-nc.labels <- as.data.frame(cbind(coordinates(labels[1])[,1], coordinates(labels[,2])[,2]))
-colnames(nc.labels) <- c("x", "y")
-nc.labels <- as.list(nc.labels)
 
-stateline <- list("sp.lines", as(states, 'SpatialLines'), col = gray(0.4), lwd = 3)
-locs.labels <- getSpPPolygonsLabptSlots(county_apples_hailfrostfreeze2006)
-labels.white.panel <- list("panel.text",nc.labels$x-.01,nc.labels$y-.01,labels=labels2,col="black",cex=1)
+
+# nc.labels <- as.data.frame(cbind(coordinates(labels[1])[,1], coordinates(labels[,2])[,2]))
+# colnames(nc.labels) <- c("x", "y")
+# nc.labels <- as.list(nc.labels)
+# 
+# stateline <- list("sp.lines", as(states, 'SpatialLines'), col = gray(0.4), lwd = 3)
+# locs.labels <- getSpPPolygonsLabptSlots(county_apples_hailfrostfreeze2006)
+# labels.white.panel <- list("panel.text",nc.labels$x-.01,nc.labels$y-.01,labels=labels2,col="black",cex=1)
+
+
+
 #spplot(county_apples_hailfrostfreeze2006, zcol = "loss", sp.layout=list(list(labels.white.panel), list(states, fill="white", first=TRUE), stateline), cuts = length(which(county_apples_hailfrostfreeze2006$loss != "NA"))-1, col.regions = brewer.pal(100, "Blues"), main = "Apples - insurance loss due to hail, frost, freeze: 2001 to 2015") 
 
 
@@ -2325,11 +2359,17 @@ labels2=as.character(labels2)
 labels2 <- paste(labels2, "M", sep="")
 
 #nc.labels <- maptools::pointLabel(x=coordinates(labels)[,1],y=coordinates(labels)[,2],labels=labels2)
-nc.labels <- as.data.frame(cbind(coordinates(labels[1])[,1], coordinates(labels[,2])[,2], labels2))
-colnames(nc.labels) <- c("x", "y", "labels")
 
-locs.labels <- getSpPPolygonsLabptSlots(county_apples_hailfrostfreeze2015)
-labels.white.panel <- list("panel.text",nc.labels$x-.01,nc.labels$y-.01,labels=labels2,col="black",cex=1)
+
+
+# nc.labels <- as.data.frame(cbind(coordinates(labels[1])[,1], coordinates(labels[,2])[,2], labels2))
+# colnames(nc.labels) <- c("x", "y", "labels")
+# 
+# locs.labels <- getSpPPolygonsLabptSlots(county_apples_hailfrostfreeze2015)
+# labels.white.panel <- list("panel.text",nc.labels$x-.01,nc.labels$y-.01,labels=labels2,col="black",cex=1)
+
+
+
 #spplot(county_apples_hailfrostfreeze2015, zcol = "loss", sp.layout=list(list(labels.white.panel), list(states, fill="white", first=TRUE)), cuts = length(which(county_apples_hailfrostfreeze2015$loss != "NA"))-1, col.regions = brewer.pal(100, "Blues"), main = "Apples - insurance loss due to hail, frost, freeze: 2001 to 2015") 
 
 
