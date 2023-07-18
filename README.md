@@ -1,6 +1,6 @@
 # Agricultural Insurance Loss and Relationships to Climate across the Inland Pacific Northwest Region of the United States
 
-Submitted to Agriculture, Ecosystems and Environment, 2023
+The material contained herein is supplementary to the article named in the title and submitted to the journal, Agriculture, Ecosystems and Environment.
 
 Erich Seamon, Paul E. Gessler, John T. Abatzoglou, Philip W. Mote, Stephen S. Lee 
 
