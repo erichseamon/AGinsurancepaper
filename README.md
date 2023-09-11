@@ -25,6 +25,18 @@ Four sets of files are provided within the /data folder:
 
 RMA_originaldata.zip: Original .txt files for insurance loss claims, by year, for the entire United States, from 1989 to 2022. Example: 1989.csv
 
+Field Names
+
+* year: year of the insurance loss
+* state: state where the claims were made
+* county: county where the claims are made
+* commodity:  the agricultural commodity associated with the claim
+* damagecause: the type of damage cause indicated as part of the insurance claim
+* month: the month the claim was filed
+* acres: the acreage of the claim (in acres)
+* loss: the indemnity amount, in dollars, for the claim (dollars)
+* lossperacre: the ratio of loss per acre (percentage)
+
 /counties. County shapefiles, compressed as .zip files.
  
   - threestate_palouse.zip.  Zip file which expands into a shapefile of the inland Pacific Northwest palouse agricultural counties.
