@@ -1,14 +1,14 @@
-# Agricultural Insurance Loss and Relationships to Climate across the Inland Pacific Northwest Region of the United States
+# Spatiotemporal Analysis of Agricultural Insurance Loss and Causes of Damage Across the Inland Pacific Northwest Region of the United States
 
 The material contained herein is supplementary to the article named in the title and submitted to the journal, Agriculture, Ecosystems and Environment.
 
 Erich Seamon, Paul E. Gessler, John T. Abatzoglou, Philip W. Mote, Stephen S. Lee 
 
-July 2023
+September 2023
 
 ## Overview:
 
-The following analyses examine agricultural commodity loss, at a county level, from 2001-2015, across the 24 county region of the Inland Pacific Northwest (IPNW). 
+The following analyses examine agricultural commodity loss, at a county level, from 2001-2022, across the 24 county region of the Inland Pacific Northwest (IPNW). 
 
 ## Data Access Summary:
 
