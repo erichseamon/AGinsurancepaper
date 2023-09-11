@@ -12,6 +12,15 @@ The following analyses examine agricultural commodity loss, at a county level, f
 
 User should only need to run the supplemental_materials.Rmd, which contains code to expand any zip files, and load data needed to re-generate the Rmd supplemental output (which is output as a .pdf).  A compiled pdf has been included.  All data is located in the /data folder
 
+## Data Summary:
+
+Four sets of files are provided within the /data folder:
+
+1. Insurance loss (RMA_originaldata.zip)
+2. County boundary data (within the /counties folder)
+3. State boundary data (within the /states folder)
+4. Crop production data from 2001-2022 for apples and wheat (within the /production folder)
+
 ## Description of the Data and file structure:
 
 RMA_originaldata.zip: Original .txt files for insurance loss claims, by year, for the entire United States, from 1989 to 2022. Example: 1989.csv
