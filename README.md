@@ -44,7 +44,7 @@ RMA_originaldata.zip:
     * lossperacre: the ratio of loss per acre (percentage)
 
 
-#### /counties. 
+#### /counties
 
 County shapefile folder, with files compressed as .zip files.
 
@@ -56,7 +56,7 @@ threestate_southernID.zip.  Zip file which expands into a shapefile of the south
 threestate_willamette.zip.  Zip file which expands into a shapefile of the Willamette Valley, Oregon agricultural counties.
    
    
-#### /states. 
+#### /states
 
 State shapefile folder, with files compressed as .zip files.
 
@@ -65,7 +65,7 @@ states_conus.zip.  .Zip file which expands into state boundary shapefile.
 
 threestate_boundary.zip. .Zip file which expands into shape file for just the three states of Idaho, Washington, and Idaho.
 
-#### /production. 
+#### /production
 
 Annual production values folder, containing .csv files for apples and wheat.
 
