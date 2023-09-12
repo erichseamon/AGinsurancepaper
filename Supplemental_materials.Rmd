@@ -1,5 +1,5 @@
 ---
-title: 'Supplemental Materials for: Spatiotemporal Analysis of Agricultural Insurance Loss and Causes of Damage across the Inland Pacific Northwest Region of the United States'
+title: 'Supplemental Materials for: Agricultural Insurance Loss Associations with Climatic Damage Causes Across the Inland Pacific Northwest Region of the United States'
 #author: "Erich Seamon, Paul E. Gessler, John T. Abatzoglou, Philip W. Mote, Stephen S. Lee"
 date: "September 2023"
 subtitle: 'The material contained herein is supplementary to the article named in the title and submitted to the journal, Agriculture, Ecosystems and Environment.'
