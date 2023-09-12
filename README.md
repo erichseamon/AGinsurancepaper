@@ -25,17 +25,17 @@ Four sets of files are provided within the /data folder:
 
 RMA_originaldata.zip: Original .txt files for insurance loss claims, by year, for the entire United States, from 1989 to 2022. Data comes from the USDA's Risk Management Agency (RMA). Example: 1989.csv
 
-Field Names
+    Field Names
 
-* year: year of the insurance loss
-* state: state where the claims were made
-* county: county where the claims are made
-* commodity:  the agricultural commodity associated with the claim
-* damagecause: the type of damage cause indicated as part of the insurance claim
-* month: the month the claim was filed
-* acres: the acreage of the claim (in acres)
-* loss: the indemnity amount, in dollars, for the claim (dollars)
-* lossperacre: the ratio of loss per acre (percentage)
+    * year: year of the insurance loss
+    * state: state where the claims were made
+    * county: county where the claims are made
+    * commodity:  the agricultural commodity associated with the claim
+    * damagecause: the type of damage cause indicated as part of the insurance claim
+    * month: the month the claim was filed
+    * acres: the acreage of the claim (in acres)
+    * loss: the indemnity amount, in dollars, for the claim (dollars)
+    * lossperacre: the ratio of loss per acre (percentage)
 
 /counties. County shapefiles, compressed as .zip files.
  
@@ -45,23 +45,21 @@ Field Names
    
 /states. State shapefiles, compressed as .zip files.
 
-- Contains two files:
-  
   - states_conus.zip.  .Zip file which expands into state boundary shapefile.
   - threestate_boundary.zip. .Zip file which expands into shape file for just the three states of Idaho, Washington, and Idaho.
 
 /production. Annual production values for apples and wheat.
-
-- Contains two files:
   
   - wheat_production.csv.  Wheat production (dollars) for the inland Pacific Northwest.  Data is generated from the National Agricultural Statistics Service (NASS)
   
-Field Names
+    Field Names
 
-* year: year 
-* utilization: dollar amount of overall crop utlization/production.
+    * year: year 
+    * utilization: dollar amount of overall crop utlization/production.
   
   - apples_production.csv.  Apples production (dollars) for the inland Pacific Northwest.
   
-* year: year 
-* utilization: dollar amount of overall crop utlization/production.
+    Field Names
+    
+    * year: year 
+    * utilization: dollar amount of overall crop utlization/production.
