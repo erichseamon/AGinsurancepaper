@@ -1,4 +1,4 @@
-# Spatiotemporal Analysis of Agricultural Insurance Loss and Causes of Damage Across the Inland Pacific Northwest Region of the United States
+# Agricultural Insurance Loss Associations with Climate Across the Inland Pacific Northwest Region of the United States
 
 The material contained herein is supplementary to the article named in the title and submitted to the journal, Agriculture, Ecosystems and Environment.
 
