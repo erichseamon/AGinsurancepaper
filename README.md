@@ -23,9 +23,12 @@ Four sets of files are provided within the /data folder:
 
 ## Description of the Data and file structure:
 
-#### RMA_originaldata.zip: 
+#### /RMA_originaldata
 
-.zip file containing USDA Risk Management Agency (RMA) .txt files for insurance loss claims, by year, for the entire United States, from 1989 to 2022. Example: 1989.csv
+Contains .zip file of USDA Risk Management Agency (RMA) .txt files for insurance loss claims, by year, for the entire United States, from 1989 to 2022. Example: 1989.csv
+
+
+RMA_originaldata.zip: 
 
 
     Field Names
