@@ -19,11 +19,11 @@ Four sets of files are provided within the /data folder:
 1. Insurance loss (RMA_originaldata.zip)
 2. County boundary data (within the /counties folder)
 3. State boundary data (within the /states folder)
-4. Crop production data from 2001-2022 for apples and wheat (within the /production folder)
+4. Crop production/utilization data from 2001-2022 for apples and wheat (within the /production folder)
 
 ## Description of the Data and file structure:
 
-RMA_originaldata.zip: Original .txt files for insurance loss claims, by year, for the entire United States, from 1989 to 2022. Example: 1989.csv
+RMA_originaldata.zip: Original .txt files for insurance loss claims, by year, for the entire United States, from 1989 to 2022. Data comes from the USDA's Risk Management Agency (RMA). Example: 1989.csv
 
 Field Names
 
@@ -40,9 +40,7 @@ Field Names
 /counties. County shapefiles, compressed as .zip files.
  
   - threestate_palouse.zip.  Zip file which expands into a shapefile of the inland Pacific Northwest palouse agricultural counties.
-   
   - threestate_southernID.zip.  Zip file which expands into a shapefile of the southern Idaho agricultural counties.
-      
   - threestate_willamette.zip.  Zip file which expands into a shapefile of the Willamette Valley, Oregon agricultural counties.
    
 /states. State shapefiles, compressed as .zip files.
@@ -56,5 +54,14 @@ Field Names
 
 - Contains two files:
   
-  - wheat_production.csv.  Wheat production (dollars) for the inland Pacific Northwest.
+  - wheat_production.csv.  Wheat production (dollars) for the inland Pacific Northwest.  Data is generated from the National Agricultural Statistics Service (NASS)
+  
+Field Names
+
+* year: year 
+* utilization: dollar amount of overall crop utlization/production.
+  
   - apples_production.csv.  Apples production (dollars) for the inland Pacific Northwest.
+  
+* year: year 
+* utilization: dollar amount of overall crop utlization/production.
