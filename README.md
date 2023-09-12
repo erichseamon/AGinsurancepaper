@@ -23,7 +23,8 @@ Four sets of files are provided within the /data folder:
 
 ## Description of the Data and file structure:
 
-RMA_originaldata.zip: Original .txt files for insurance loss claims, by year, for the entire United States, from 1989 to 2022. Data comes from the USDA's Risk Management Agency (RMA). Example: 1989.csv
+###RMA_originaldata.zip: Original .txt files for insurance loss claims, by year, for the entire United States, from 1989 to 2022. Data comes from the USDA's Risk Management Agency (RMA). Example: 1989.csv
+
 
     Field Names
 
@@ -37,28 +38,36 @@ RMA_originaldata.zip: Original .txt files for insurance loss claims, by year, fo
     * loss: the indemnity amount, in dollars, for the claim (dollars)
     * lossperacre: the ratio of loss per acre (percentage)
 
-/counties. County shapefiles, compressed as .zip files.
+
+###/counties. County shapefiles, compressed as .zip files.
+
  
   - threestate_palouse.zip.  Zip file which expands into a shapefile of the inland Pacific Northwest palouse agricultural counties.
   - threestate_southernID.zip.  Zip file which expands into a shapefile of the southern Idaho agricultural counties.
   - threestate_willamette.zip.  Zip file which expands into a shapefile of the Willamette Valley, Oregon agricultural counties.
    
-/states. State shapefiles, compressed as .zip files.
+   
+###/states. State shapefiles, compressed as .zip files.
+
 
   - states_conus.zip.  .Zip file which expands into state boundary shapefile.
   - threestate_boundary.zip. .Zip file which expands into shape file for just the three states of Idaho, Washington, and Idaho.
 
-/production. Annual production values for apples and wheat.
+
+###/production. Annual production values for apples and wheat.
+
   
   - wheat_production.csv.  Wheat production (dollars) for the inland Pacific Northwest.  Data is generated from the National Agricultural Statistics Service (NASS)
   
+    
     Field Names
-
+    
     * year: year 
     * utilization: dollar amount of overall crop utlization/production.
-  
+    
   - apples_production.csv.  Apples production (dollars) for the inland Pacific Northwest.
   
+    
     Field Names
     
     * year: year 
