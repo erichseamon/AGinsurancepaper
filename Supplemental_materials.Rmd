@@ -1,8 +1,8 @@
 ---
-title: 'Supplemental Materials for: Agricultural Insurance Loss Relationships to Climatic Damage Causes Across the Inland Pacific Northwest Region of the United States'
-#author: "Erich Seamon, Paul E. Gessler, John T. Abatzoglou, Philip W. Mote, Stephen S. Lee"
+title: 'Supplemental Materials for: Agricultural Insurance Loss Relationships to Climatic Damage Cause Across the Inland Pacific Northwest Region of the United States'
+#author: "REDACTED FOR REVIEW"
 date: "September 2023"
-subtitle: 'The material contained herein is supplementary to the article named in the title and submitted to the journal, Agriculture, Ecosystems and Environment.'
+subtitle: 'The material contained herein is supplementary to the article named in the title and submitted to the journal, Environmental Research Letters.'
 always_allow_html: yes
 header-includes:
 - \usepackage{pdflscape}
@@ -49,7 +49,7 @@ This supplemental appendix provides exploratory data and factor analyses of agri
 
 ## 1. Supplemental Tables List
 
-Table S1. Example of insurance loss records that were acquired from the USDA Risk Management Agency (RMA).  Each record represents an individual insurance claim.  Full datasets are available at https://github.com/erichseamon/AGinsurancepaper as well as via the following DOI:
+Table S1. Example of insurance loss records that were acquired from the USDA Risk Management Agency (RMA).  Each record represents an individual insurance claim.  Full datasets are available at \<REDACTED for review\> as well as via the following DOI: \<REDACTED for review\>
 <br></br>
 
 
@@ -91,7 +91,7 @@ Figure S9. iPNW agricultural insurance loss for wheat by damage cause: 2001 to 2
 Figure S10. iPNW stacked barplot of annual wheat agricultural insurance loss, by top damage causes, 2001 to 2022.
 <br></br>
 
-Figure S11. iPNW map of wheat losses, 2001 to 2022..
+Figure S11. iPNW map of wheat losses, 2001 to 2022.
 <br></br>
 
 Figure S12. iPNW agricultural insurance loss for apples by damage cause: 2001 to 2022.
@@ -136,16 +136,6 @@ Figure S23. Top panel: biplot of insurance loss for the iPNW, for wheat by year,
 Figure S24. Top panel: biplot of insurance loss for the iPNW, for wheat by county, with damage cause as the factor loadings.  Uses a Kmeans technique for grouping. Bottom panel: Scree plot. Data from 2001 is 2022 is used.
 <br></br>
 
-```{r message=FALSE, warning=FALSE, echo = FALSE}
-
-# dir.create("/tmp/seamon")
-# 
-# download.file("https://raw.githubusercontent.com/erichseamon/seamon_dissertation/master/data/seamon_dissertation_dataload.R", destfile = "/tmp/seamon/dataload.R")
-# 
-# usePackage("RCurl")
-# source("/tmp/seamon/dataload.R", local=FALSE)
-
-```
 
 ```{r message=FALSE, warning=FALSE, echo=FALSE}
 
@@ -171,47 +161,46 @@ usePackage("repmis")
 
 #------add crop insurance data
 
-#URL <- "https://raw.githubusercontent.com/erichseamon/seamon_dissertation/master/data/RMA_originaldata/RMA_originaldata_txt.zip"
 destfile <- "./data/RMA_originaldata/RMA_originaldata.zip"
 #download.file(destfile, destfile)
-outDir<-"/tmp/seamon/RMA_originaldata/"
+outDir<-"/tmp/aginsurance/RMA_originaldata/"
 unzip(destfile,exdir=outDir)
 
 
-rma1989 <- read.csv("/tmp/seamon/RMA_originaldata/1989.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma1990 <- read.csv("/tmp/seamon/RMA_originaldata/1990.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma1991 <- read.csv("/tmp/seamon/RMA_originaldata/1991.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma1992 <- read.csv("/tmp/seamon/RMA_originaldata/1992.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma1993 <- read.csv("/tmp/seamon/RMA_originaldata/1993.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma1994 <- read.csv("/tmp/seamon/RMA_originaldata/1994.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma1995 <- read.csv("/tmp/seamon/RMA_originaldata/1995.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma1996 <- read.csv("/tmp/seamon/RMA_originaldata/1996.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma1997 <- read.csv("/tmp/seamon/RMA_originaldata/1997.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma1998 <- read.csv("/tmp/seamon/RMA_originaldata/1998.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma1999 <- read.csv("/tmp/seamon/RMA_originaldata/1999.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma2000 <- read.csv("/tmp/seamon/RMA_originaldata/2000.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma2001 <- read.csv("/tmp/seamon/RMA_originaldata/2001.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma2002 <- read.csv("/tmp/seamon/RMA_originaldata/2002.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma2003 <- read.csv("/tmp/seamon/RMA_originaldata/2003.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma2004 <- read.csv("/tmp/seamon/RMA_originaldata/2004.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma2005 <- read.csv("/tmp/seamon/RMA_originaldata/2005.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma2006 <- read.csv("/tmp/seamon/RMA_originaldata/2006.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma2007 <- read.csv("/tmp/seamon/RMA_originaldata/2007.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma2008 <- read.csv("/tmp/seamon/RMA_originaldata/2008.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma2009 <- read.csv("/tmp/seamon/RMA_originaldata/2009.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma2010 <- read.csv("/tmp/seamon/RMA_originaldata/2010.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma2011 <- read.csv("/tmp/seamon/RMA_originaldata/2011.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma2012 <- read.csv("/tmp/seamon/RMA_originaldata/2012.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma2013 <- read.csv("/tmp/seamon/RMA_originaldata/2013.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma2014 <- read.csv("/tmp/seamon/RMA_originaldata/2014.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma2015 <- read.csv("/tmp/seamon/RMA_originaldata/2015.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma2016 <- read.csv("/tmp/seamon/RMA_originaldata/2016.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma2017 <- read.csv("/tmp/seamon/RMA_originaldata/2017.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma2018 <- read.csv("/tmp/seamon/RMA_originaldata/2018.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma2019 <- read.csv("/tmp/seamon/RMA_originaldata/2019.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma2020 <- read.csv("/tmp/seamon/RMA_originaldata/2020.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma2021 <- read.csv("/tmp/seamon/RMA_originaldata/2021.txt", sep = "|", header = FALSE, strip.white = TRUE)
-rma2022 <- read.csv("/tmp/seamon/RMA_originaldata/2022.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma1989 <- read.csv("/tmp/aginsurance/RMA_originaldata/1989.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma1990 <- read.csv("/tmp/aginsurance/RMA_originaldata/1990.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma1991 <- read.csv("/tmp/aginsurance/RMA_originaldata/1991.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma1992 <- read.csv("/tmp/aginsurance/RMA_originaldata/1992.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma1993 <- read.csv("/tmp/aginsurance/RMA_originaldata/1993.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma1994 <- read.csv("/tmp/aginsurance/RMA_originaldata/1994.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma1995 <- read.csv("/tmp/aginsurance/RMA_originaldata/1995.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma1996 <- read.csv("/tmp/aginsurance/RMA_originaldata/1996.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma1997 <- read.csv("/tmp/aginsurance/RMA_originaldata/1997.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma1998 <- read.csv("/tmp/aginsurance/RMA_originaldata/1998.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma1999 <- read.csv("/tmp/aginsurance/RMA_originaldata/1999.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma2000 <- read.csv("/tmp/aginsurance/RMA_originaldata/2000.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma2001 <- read.csv("/tmp/aginsurance/RMA_originaldata/2001.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma2002 <- read.csv("/tmp/aginsurance/RMA_originaldata/2002.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma2003 <- read.csv("/tmp/aginsurance/RMA_originaldata/2003.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma2004 <- read.csv("/tmp/aginsurance/RMA_originaldata/2004.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma2005 <- read.csv("/tmp/aginsurance/RMA_originaldata/2005.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma2006 <- read.csv("/tmp/aginsurance/RMA_originaldata/2006.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma2007 <- read.csv("/tmp/aginsurance/RMA_originaldata/2007.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma2008 <- read.csv("/tmp/aginsurance/RMA_originaldata/2008.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma2009 <- read.csv("/tmp/aginsurance/RMA_originaldata/2009.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma2010 <- read.csv("/tmp/aginsurance/RMA_originaldata/2010.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma2011 <- read.csv("/tmp/aginsurance/RMA_originaldata/2011.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma2012 <- read.csv("/tmp/aginsurance/RMA_originaldata/2012.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma2013 <- read.csv("/tmp/aginsurance/RMA_originaldata/2013.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma2014 <- read.csv("/tmp/aginsurance/RMA_originaldata/2014.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma2015 <- read.csv("/tmp/aginsurance/RMA_originaldata/2015.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma2016 <- read.csv("/tmp/aginsurance/RMA_originaldata/2016.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma2017 <- read.csv("/tmp/aginsurance/RMA_originaldata/2017.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma2018 <- read.csv("/tmp/aginsurance/RMA_originaldata/2018.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma2019 <- read.csv("/tmp/aginsurance/RMA_originaldata/2019.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma2020 <- read.csv("/tmp/aginsurance/RMA_originaldata/2020.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma2021 <- read.csv("/tmp/aginsurance/RMA_originaldata/2021.txt", sep = "|", header = FALSE, strip.white = TRUE)
+rma2022 <- read.csv("/tmp/aginsurance/RMA_originaldata/2022.txt", sep = "|", header = FALSE, strip.white = TRUE)
 
 
 
@@ -425,25 +414,23 @@ usePackage("dplyr")
 usePackage("raster")
 usePackage("htmltools")
 
-#URL <- "https://raw.githubusercontent.com/erichseamon/seamon_dissertation/master/data/states/states_conus.zip"
-destfile <- "/data/states/states_conus.zip"
+destfile <- "./data/states/states_conus.zip"
 #download.file(URL, destfile)
-outDir<-"/tmp/seamon"
+outDir<-"/tmp/aginsurance/states_conus/"
 unzip(destfile,exdir=outDir)
 
-states <- readShapePoly('/tmp/seamon/states_conus/states_conus.shp',
+states <- readShapePoly('/tmp/aginsurance/states_conus/states_conus.shp',
                         proj4string=CRS
                         ("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
 projection = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
 
 
-#URL <- "https://raw.githubusercontent.com/erichseamon/seamon_dissertation/master/data/states/threestate_boundary.zip"
 destfile <- "./data/counties/threestate_boundary.zip"
 #download.file(URL, destfile)
-outDir<-"/tmp/seamon"
+outDir<-"/tmp/aginsurance/threestate_boundary/"
 unzip(destfile,exdir=outDir)
     
-threestates <- readShapePoly('/tmp/seamon/threestate_boundary/threestate_boundary.shp', 
+threestates <- readShapePoly('/tmp/aginsurance/threestate_boundary/threestate_boundary.shp', 
                                   proj4string=CRS
                                   ("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
         projection = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
@@ -451,35 +438,32 @@ threestates <- readShapePoly('/tmp/seamon/threestate_boundary/threestate_boundar
 
 #setwd("/dmine/data/counties/")
         
-#URL <- "https://raw.githubusercontent.com/erichseamon/seamon_dissertation/master/data/counties/threestate_willamette.zip"
 destfile <- "./data/counties/threestate_willamette.zip"
 #download.file(URL, destfile)
-outDir<-"/tmp/seamon"
+outDir<-"/tmp/aginsurance/threestate_willamette/"
 unzip(destfile,exdir=outDir)
 
-counties_willamette <- readShapePoly('/tmp/seamon/threestate_willamette/threestate_willamette.shp',
+counties_willamette <- readShapePoly('/tmp/aginsurance/threestate_willamette/threestate_willamette.shp',
                      proj4string=CRS
                      ("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
 projection = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
 
-#URL <- "https://raw.githubusercontent.com/erichseamon/seamon_dissertation/master/data/counties/threestate_southernID.zip"
 destfile <- "./data/counties/threestate_southernID.zip"
 #download.file(URL, destfile)
-outDir<-"/tmp/seamon"
+outDir<-"/tmp/aginsurance/threestate_southernID/"
 unzip(destfile,exdir=outDir)
 
-counties_ID <- readShapePoly('/tmp/seamon/threestate_southernID/threestate_southernID.shp',
+counties_ID <- readShapePoly('/tmp/aginsurance/threestate_southernID/threestate_southernID.shp',
                      proj4string=CRS
                      ("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
 projection = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
 
-#URL <- "https://raw.githubusercontent.com/erichseamon/seamon_dissertation/master/data/counties/threestate_palouse.zip"
 destfile <- "./data/counties/threestate_palouse.zip"
 #download.file(URL, destfile)
-outDir<-"/tmp/seamon"
+outDir<-"/tmp/aginsurance/threestate_palouse/"
 unzip(destfile,exdir=outDir)
 
-counties_palouse <- readShapePoly('/tmp/seamon/threestate_palouse/threestate_palouse.shp',
+counties_palouse <- readShapePoly('/tmp/aginsurance/threestate_palouse/threestate_palouse.shp',
                      proj4string=CRS
                      ("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
 projection = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
@@ -567,7 +551,7 @@ maps::map("state", region=c("washington", "Idaho", "Oregon"), fill=T, add=T)
 
 RMA_PNW_table <- RMA_PNW[-6]
 
-knitr::kable(RMA_PNW_table[1:9,], row.names = FALSE, booktabs = T, format="latex", caption = "Example of insurance loss records that were acquired from the USDA Risk Management Agency (RMA).  Each record represents an individual insurance claim.  Full datasets are available at https://github.com/erichseamon/AGinsurancepaper as well as via the following DOI:") %>%
+knitr::kable(RMA_PNW_table[1:9,], row.names = FALSE, booktabs = T, format="latex", caption = "Example of insurance loss records that were acquired from the USDA Risk Management Agency (RMA).  Each record represents an individual insurance claim.  Full datasets are available at <REDACTED for review> as well as via the following DOI: <REDACTED for review>") %>%
    kable_styling(latex_options = c("hold_position"),
                 full_width = F)
 
@@ -1783,12 +1767,12 @@ usePackage("maptools")
 wheat_production <- read.csv("./data/production/wheat_production.csv")
 wheat_production$legend <- c("Wheat Production ($)")
 
-states <- readShapePoly('/tmp/seamon/states_conus/states_conus.shp', 
+states <- readShapePoly('/tmp/aginsurance/states_conus/states_conus.shp', 
                                   proj4string=CRS
                                   ("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
         projection = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
 
-counties <- readShapePoly('/tmp/seamon/threestate_palouse/threestate_palouse.shp',
+counties <- readShapePoly('/tmp/aginsurance/threestate_palouse/threestate_palouse.shp',
                      proj4string=CRS
                      ("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
 projection = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
@@ -1830,7 +1814,7 @@ usePackage("scales")
 par(mar=c(11,8,6,2), mgp = c(5, 1, 0)) 
 
 gg2 <- ggplot(WHEAT_damage_top) + 
-    geom_bar(aes(fill=damagecause, y=loss, x=year), stat="identity") + theme_bw() + theme(panel.grid.major=element_blank(),panel.grid.minor=element_blank()) + ggtitle("IPNW wheat loss vs. year - top damage causes") + theme(axis.title.y = element_text(size=20), axis.title.x = element_text(size = 20), axis.text.y = element_text(size=rel(1.2), hjust = 1), axis.text.x = element_text(size=rel(1.2), angle = 90, hjust = 1)) + theme(plot.title = element_text(size =20))  +  scale_x_discrete(name = "Year", limits=c(2001:2022)) + theme(legend.text=element_text(size=20)) + scale_fill_manual("legend", values = c("Drought" = "red", "Decline in Price" = "blue", "Heat" = "gray")) + theme(legend.title=element_text(size=20, face = "bold")) + theme(plot.title = element_text(size=20, face = "bold")) + scale_y_continuous(name = "Insurance claim loss ($)", labels = c("0 M", "500 M", "1 B", "1.5 B"), sec.axis = sec_axis(~ .*1, name="Wheat Production ($)", labels = c("0 M", "500 M", "1 B", "1.5 B"))) + theme(legend.position="bottom", legend.box = "vertical") + theme(text=element_text(size=20,  family="serif")) + geom_line(data = wheat_production, aes(x = year, y = sales, colour = legend))+ scale_color_manual(values=c("black"), name="") +
+    geom_bar(aes(fill=damagecause, y=loss, x=year), stat="identity") + theme_bw() + theme(panel.grid.major=element_blank(),panel.grid.minor=element_blank()) + ggtitle("IPNW wheat loss vs. year - top damage causes") + theme(axis.title.y = element_text(size=20), axis.title.x = element_text(size = 20), axis.text.y = element_text(size=rel(1.2), hjust = 1), axis.text.x = element_text(size=rel(1.2), angle = 90, hjust = 1)) + theme(plot.title = element_text(size =20))  +  scale_x_discrete(name = "Year", limits=c(2001:2022)) + theme(legend.text=element_text(size=20)) + scale_fill_manual("legend", values = c("Drought" = "red", "Decline in Price" = "blue", "Heat" = "gray")) + theme(legend.title=element_text(size=20, face = "bold")) + theme(plot.title = element_text(size=20, face = "bold")) + scale_y_continuous(name = "Insurance claim loss ($)", labels = c("0 M", "500 M", "1 B", "1.5 B"), sec.axis = sec_axis(~ .*1, name="Wheat Production ($)", labels = c("0 M", "500 M", "1 B", "1.5 B"))) + theme(legend.position="bottom", legend.box = "vertical") + theme(text=element_text(size=20,  family="serif")) + geom_line(data = wheat_production, aes(x = year, y = utilization, colour = legend))+ scale_color_manual(values=c("black"), name="") +
   guides(color = guide_legend(nrow = 2)) 
 
 
@@ -1855,25 +1839,23 @@ usePackage("sp")
 usePackage("latticeExtra")
 library(RColorBrewer)
 
-#URL <- "https://raw.githubusercontent.com/erichseamon/seamon_dissertation/master/data/states/states_conus.zip"
 destfile <- "/data/states/states_conus.zip"
 #download.file(URL, destfile)
-outDir<-"/tmp/seamon"
+outDir<-"/tmp/aginsurance/states_conus/"
 unzip(destfile,exdir=outDir)
 
-states <- readShapePoly('/tmp/seamon/states_conus/states_conus.shp',
+states <- readShapePoly('/tmp/aginsurance/states_conus/states_conus.shp',
                         proj4string=CRS
                         ("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
 projection = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
 
 
-#URL <- "https://raw.githubusercontent.com/erichseamon/seamon_dissertation/master/data/counties/threestate_palouse.zip"
 destfile <- "./data/counties/threestate_palouse.zip"
 #download.file(URL, destfile)
-outDir<-"/tmp/seamon"
+outDir<-"/tmp/aginsurance/threestate_palouse/"
 unzip(destfile,exdir=outDir)
 
-counties_palouse <- readShapePoly('/tmp/seamon/threestate_palouse/threestate_palouse.shp',
+counties_palouse <- readShapePoly('/tmp/aginsurance/threestate_palouse/threestate_palouse.shp',
                      proj4string=CRS
                      ("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
 projection = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
@@ -2096,12 +2078,12 @@ usePackage("maptools")
 apple_production <- read.csv("./data/production/apple_production.csv")
 apple_production$legend <- c("Apple Production ($)")
 
-states <- readShapePoly('/tmp/seamon/states_conus/states_conus.shp', 
+states <- readShapePoly('/tmp/aginsurance/states_conus/states_conus.shp', 
                                   proj4string=CRS
                                   ("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
         projection = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
 
-counties <- readShapePoly('/tmp/seamon/threestate_palouse/threestate_palouse.shp',
+counties <- readShapePoly('/tmp/aginsurance/threestate_palouse/threestate_palouse.shp',
                      proj4string=CRS
                      ("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
 projection = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
@@ -2250,25 +2232,23 @@ usePackage("sp")
 usePackage("latticeExtra")
 library(RColorBrewer)
 
-#URL <- "https://raw.githubusercontent.com/erichseamon/seamon_dissertation/master/data/states/states_conus.zip"
 destfile <- "/data/states/states_conus.zip"
 #download.file(URL, destfile)
-outDir<-"/tmp/seamon"
+outDir<-"/tmp/aginsurance/states_conus/"
 unzip(destfile,exdir=outDir)
 
-states <- readShapePoly('/tmp/seamon/states_conus/states_conus.shp',
+states <- readShapePoly('/tmp/aginsurance/states_conus/states_conus.shp',
                         proj4string=CRS
                         ("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
 projection = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
 
 
-#URL <- "https://raw.githubusercontent.com/erichseamon/seamon_dissertation/master/data/counties/threestate_palouse.zip"
 destfile <- "./data/counties/threestate_palouse.zip"
 #download.file(URL, destfile)
-outDir<-"/tmp/seamon"
+outDir<-"/tmp/aginsurance/threestate_palouse/"
 unzip(destfile,exdir=outDir)
 
-counties_palouse <- readShapePoly('/tmp/seamon/threestate_palouse/threestate_palouse.shp',
+counties_palouse <- readShapePoly('/tmp/aginsurance/threestate_palouse/threestate_palouse.shp',
                      proj4string=CRS
                      ("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
 projection = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")

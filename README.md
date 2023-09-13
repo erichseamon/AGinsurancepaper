@@ -1,4 +1,4 @@
-# Agricultural Insurance Loss Relationships to Climatic Damage Causes Across the Inland Pacific Northwest Region of the United States
+# Agricultural Insurance Loss Relationships to Climatic Damage Cause Across the Inland Pacific Northwest Region of the United States
 
 The material contained herein is supplementary to the article named in the title and submitted to the journal, Agriculture, Ecosystems and Environment.
 
