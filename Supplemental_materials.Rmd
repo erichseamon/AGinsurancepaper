@@ -2,7 +2,7 @@
 title: 'Supplemental Materials for: Agricultural Insurance Loss Relationships to Climatic Damage Cause Across the Inland Pacific Northwest Region of the United States'
 #author: "REDACTED FOR REVIEW"
 date: "September 2023"
-subtitle: 'The material contained herein is supplementary to the article named in the title and submitted to the journal, Environmental Research Letters.'
+subtitle: 'The material contained herein is supplementary to the article named in the title and submitted to the journal, Environmental Research Letters.' 
 always_allow_html: yes
 header-includes:
 - \usepackage{pdflscape}
