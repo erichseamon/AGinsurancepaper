@@ -1,8 +1,8 @@
 ---
-title: 'Supplemental Materials for: Agricultural Insurance Loss Relationships to Climatic Damage Cause Across the Inland Pacific Northwest Region of the United States'
-#author: "REDACTED FOR REVIEW"
-date: "September 2023"
-subtitle: 'The material contained herein is supplementary to the article named in the title and submitted to the journal, Environmental Research Letters.' 
+title: 'Supplemental Materials for: Climatic Relationships to Agricultural Insurance Loss for the Pacific Northwest Region of the United States'
+authors: "Erich Seamon, Paul E. Gessler, John T. Abatzoglou, Philip W. Mote, Stephen S. Lee"
+date: "October 2023"
+subtitle: 'The material contained herein is supplementary to the article named in the title and submitted to the Journal of Agriculture and Life Sciences.' 
 always_allow_html: yes
 header-includes:
 - \usepackage{pdflscape}
@@ -49,7 +49,7 @@ This supplemental appendix provides exploratory data and factor analyses of agri
 
 ## 1. Supplemental Tables List
 
-Table S1. Example of insurance loss records that were acquired from the USDA Risk Management Agency (RMA).  Each record represents an individual insurance claim.  Full datasets are available at \<REDACTED for review\> as well as via the following DOI: \<REDACTED for review\>
+Table S1. Example of insurance loss records that were acquired from the USDA Risk Management Agency (RMA).  Each record represents an individual insurance claim.  Full datasets are available via the following DOI: https://doi.org/10.5061/dryad.hhmgqnknh
 <br></br>
 
 
@@ -551,7 +551,7 @@ maps::map("state", region=c("washington", "Idaho", "Oregon"), fill=T, add=T)
 
 RMA_PNW_table <- RMA_PNW[-6]
 
-knitr::kable(RMA_PNW_table[1:9,], row.names = FALSE, booktabs = T, format="latex", caption = "Example of insurance loss records that were acquired from the USDA Risk Management Agency (RMA).  Each record represents an individual insurance claim.  Full datasets are available at <REDACTED for review> as well as via the following DOI: <REDACTED for review>") %>%
+knitr::kable(RMA_PNW_table[1:9,], row.names = FALSE, booktabs = T, format="latex", caption = "Example of insurance loss records that were acquired from the USDA Risk Management Agency (RMA).  Each record represents an individual insurance claim.  Full datasets are available via the following DOI: https://doi.org/10.5061/dryad.hhmgqnknh") %>%
    kable_styling(latex_options = c("hold_position"),
                 full_width = F)
 
@@ -735,6 +735,32 @@ mtext("Insurance Claim Loss ($)", cex = 1.5, side=2, line=5.5)
 #          css.cell = "padding-left: .5em; padding-right: .5em;")
 
 ```
+
+\newpage
+
+
+```{r message=FALSE, warning=FALSE, error=TRUE, echo = FALSE, fig.width = 8, fig.height = 8, fig.cap=paste("Pacific Northwest agricultural insurance loss per claim: 2001 to 2022.")}
+
+options(scipen = 999)
+# PNW_lossperclaim <- ggplot(RMA_damage_PNW, aes(x=factor(year), y=lossperclaim))+
+#      geom_boxplot(outlier.shape = NA)+ theme_bw() + scale_y_continuous(limits = c(0, 500000)) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+# 
+# IPNW_lossperclaim <- ggplot(RMA_damage_IPNW, aes(x=factor(year), y=lossperclaim))+
+#      geom_boxplot(outlier.shape = NA)+ theme_bw() + scale_y_continuous(limits = c(0, 500000))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+RMA_damage_IPNW_wheat <- subset(RMA_damage_IPNW, commodity == "Wheat" | commodity == "WHEAT")
+IPNW_wheat_lossperclaim <- ggplot(RMA_damage_IPNW_wheat, aes(x=factor(year), y=lossperclaim))+
+     geom_boxplot(outlier.shape = NA)+ theme_bw() + scale_y_continuous(limits = c(0, 500000))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+RMA_damage_IPNW_apples <- subset(RMA_damage_IPNW, commodity == "Apples" | commodity == "APPLES")
+IPNW_apples_lossperclaim <- ggplot(RMA_damage_IPNW_apples, aes(x=factor(year), y=lossperclaim))+
+     geom_boxplot(outlier.shape = NA)+ theme_bw() + scale_y_continuous(limits = c(0, 500000))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+grid.arrange(IPNW_wheat_lossperclaim,IPNW_apples_lossperclaim, nrow=1, ncol=2)
+
+```
+
+
 \newpage
 
 ```{r message=FALSE, warning=FALSE, error=TRUE, echo = FALSE, fig.width = 8, fig.height = 8, fig.cap=paste("PNW total insurance loss by commodity: 2001 to 2022")}
