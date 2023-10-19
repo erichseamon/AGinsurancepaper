@@ -47,25 +47,27 @@ This supplemental appendix provides exploratory data and factor analyses of agri
 
 \newpage
 
-## 1. Supplemental Tables List
+## Supplemental Figures and Tables List
+
+
+### 1. Agricultural Insurance Loss Example Table
 
 Table S1. Example of insurance loss records that were acquired from the USDA Risk Management Agency (RMA).  Each record represents an individual insurance claim.  Full datasets are available via the following DOI: https://doi.org/10.5061/dryad.hhmgqnknh
 <br></br>
 
 
-\newpage
-
-## 2. Supplemental Figures List
-
-### Pacific Northwest (PNW) Summary Supplemental Figures
+### 2. Study Area Figure
 
 Figure S1. Pacific Northwest study area, which includes agricultural regions for the inland Pacific Northwest, the southern Idaho valley, and the Willamette valley.
 <br></br>
 
+
+### 3. Pacific Northwest (PNW) Insurance Summaries Figures
+
 Figure S2. PNW agricultural insurance loss by year, 1989 to 2022.
 <br></br>
 
-Figure S3. PNW agricultural insurance loss by year: 2001 to 2022.
+Figure S3. PNW agricultural insurance loss by year, 2001 to 2022.
 <br></br>
 
 Figure S4. PNW agricultural insurance loss by damage cause: 2001 to 2022.
@@ -74,7 +76,8 @@ Figure S4. PNW agricultural insurance loss by damage cause: 2001 to 2022.
 Figure S5. PNW agricultural insurance loss by commodity: 2001 to 2022
 <br></br>
 
-### Inland Pacific Northwest (iPNW) Summary Supplemental Figures
+
+### 4. Inland Pacific Northwest (iPNW) Insurance Summaries Figures
 
 Figure S6. iPNW agricultural insurance loss by year, 2001 to 2022.
 <br></br>
@@ -83,7 +86,9 @@ Figure S7. iPNW agricultural insurance loss by damage cause, 2001 to 2022.
 <br></br>
 
 Figure S8. iPNW agricultural insurance loss by commodity, 2001 to 2022.
-<br></br>
+
+
+### 5. Inland Pacific Northwest (iPNW) Wheat and Apples Insurance Summaries Figures
 
 Figure S9. iPNW agricultural insurance loss for wheat by damage cause: 2001 to 2022.
 <br></br>
@@ -103,37 +108,25 @@ Figure S13. iPNW stacked barplot of annual apples agricultural insurance loss, b
 Figure S14. iPNW map of apple losses, 2001 to 2022.
 <br></br>
 
-### Pacific Northwest (iPNW) PCA Supplemental Figures
 
-Figure S15. Top panel: biplot of principal components for PNW insurance loss, for wheat by county, with damage cause as the factor loadings. Bottom panel: Scree plot. Data from 2001 is 2022 is used.
+### 6. Inland Pacific Northwest (iPNW) PCA Figures
+
+Figure S17. Top panel: IPNW All commodities by county, with damage cause as factor loadings. Bottom panel: Scree plot. Data from 2001 is 2022 is used
 <br></br>
 
-Figure S16. Top panel: biplot of principal components for PNW insurance loss, for apples by county, with damage caus eas the factor loadings. Bottom panel: Scree plot. Data from 2001 is 2022 is used.
+Figure S18. Top panel: IPNW All commodities by month, with damage cause as factor loadings. Bottom panel: Scree plot. Data from 2001 is 2022 is used
 <br></br>
 
-Figure S17. Top panel: biplot of principal components for PNW insurance loss, for barley by county, with damage cause as the factor loadings. Bottom panel: Scree plot. Data from 2001 is 2022 is used.
+Figure S19. Top panel: IPNW Wheat by year, with damage cause as factor loadings, using a Kmeans technique for grouping. Bottom panel: Scree plot. Data from 2001 is 2022 is used.
 <br></br>
 
-### Inland Pacific Northwest (iPNW) PCA Supplemental Figures
-
-Figure S18. Top panel: biplot of principal components for iPNW insurance loss, for all commodities by county, with damage cause as the factor loadings. Bottom panel: Scree plot. Data from 2001 is 2022 is used
-
-Figure S19. Top panel: biplot of principal components for iPNW insurance loss, for all commodities by month, with damage cause as the factor loadings. Bottom panel: Scree plot. Data from 2001 is 2022 is used
+Figure S20. Top panel: IPNW Wheat by county, with damage cause as factor loadings, using a Kmeans technique for grouping. Bottom panel: Scree plot. Data from 2001 is 2022 is used.
 <br></br>
 
-Figure S20. Top panel: biplot of principal components for iPNW insurance loss, for wheat by year, with damage cause as the factor loadings. Bottom panel: Scree plot. Data from 2001 is 2022 is used
+Figure S21. Top panel: IPNW Apples by year, with damage cause as factor loadings, using a Kmeans technique for grouping. Bottom panel: Scree plot. Data from 2001 is 2022 is used.
 <br></br>
 
-Figure S21. Top panel: biplot of principal components for iPNW insurance loss, for wheat by county, with damage cause as the factor loadings. Bottom panel: Scree plot. Data from 2001 is 2022 is used
-<br></br>
-
-Figure S22. Top panel: biplot of principal components for iPNW insurance loss, for barley by county, with damage cause as the factor loadings. Bottom panel: Scree plot. Data from 2001 is 2022 is used
-<br></br>
-
-Figure S23. Top panel: biplot of insurance loss for the iPNW, for wheat by year, with damage cause as the factor loadings.  Uses a Kmeans technique for grouping. Bottom panel: Scree plot. Data from 2001 is 2022 is used.
-<br></br>
-
-Figure S24. Top panel: biplot of insurance loss for the iPNW, for wheat by county, with damage cause as the factor loadings.  Uses a Kmeans technique for grouping. Bottom panel: Scree plot. Data from 2001 is 2022 is used.
+Figure S22. Top panel: IPNW Apples by county, with damage cause as factor loadings, using a Kmeans technique for grouping. Bottom panel: Scree plot. Data from 2001 is 2022 is used.
 <br></br>
 
 
@@ -403,6 +396,28 @@ fig <- local({
 ``` 
 
 \newpage
+\blandscape
+
+## 1. Agricultural Insurance Loss Example Table
+
+```{r message=FALSE, warning=FALSE, echo=FALSE}
+
+#```{r message=FALSE, warning=FALSE, error=TRUE, echo = FALSE, fig.width = 8, fig.height = 8, fig.cap=paste("Example of the original data that was acquired from the USDA Risk Management Agency (RMA).  Each record represents an individual insurance claim.")}
+
+RMA_PNW_table <- RMA_PNW[-6]
+
+knitr::kable(RMA_PNW_table[1:9,], row.names = FALSE, booktabs = T, format="latex", caption = "Example of insurance loss records that were acquired from the USDA Risk Management Agency (RMA).  Each record represents an individual insurance claim.  Full datasets are available via the following DOI: https://doi.org/10.5061/dryad.hhmgqnknh") %>%
+   kable_styling(latex_options = c("hold_position"),
+                full_width = F)
+
+```
+
+
+\newpage
+\elandscape
+
+
+## 2. Study Area Figure
 
 ```{r message=FALSE, warning=FALSE, echo = FALSE, fig.width = 8, fig.height = 7, fig.cap=paste("Pacific Northwest study area, which includes agricultural regions for the inland Pacific Northwest, the southern Idaho valley, and the Willamette valley.")}
 
@@ -540,28 +555,9 @@ maps::map("state", region=c("washington", "Idaho", "Oregon"), fill=T, add=T)
 #addScaleBar(mapz, position = c("bottomright"), options = scaleBarOptions())
 
 ```
-
 \newpage
-\blandscape
 
-
-```{r message=FALSE, warning=FALSE, echo=FALSE}
-
-#```{r message=FALSE, warning=FALSE, error=TRUE, echo = FALSE, fig.width = 8, fig.height = 8, fig.cap=paste("Example of the original data that was acquired from the USDA Risk Management Agency (RMA).  Each record represents an individual insurance claim.")}
-
-RMA_PNW_table <- RMA_PNW[-6]
-
-knitr::kable(RMA_PNW_table[1:9,], row.names = FALSE, booktabs = T, format="latex", caption = "Example of insurance loss records that were acquired from the USDA Risk Management Agency (RMA).  Each record represents an individual insurance claim.  Full datasets are available via the following DOI: https://doi.org/10.5061/dryad.hhmgqnknh") %>%
-   kable_styling(latex_options = c("hold_position"),
-                full_width = F)
-
-```
-
-
-
-
-\newpage
-\elandscape
+## 3. Pacific Northwest (PNW) Insurance Summaries Figures
 
 ```{r message=FALSE, warning=FALSE, error=TRUE, echo = FALSE, fig.width = 8, fig.height = 8, fig.cap=paste("Pacific Northwest agricultural insurance loss by year, 1989 to 2022")}
 
@@ -602,7 +598,7 @@ barplot(RMA_allyear$Loss, names.arg = RMA_allyear$Year, las = 3, main = "", yaxt
 text(x=24, y=1500000000, "83% of \n Agriculture claims occur \n after 2000", cex = 1.5)
 
 
-graphics::title(main = "PNW total insurance loss by year: 1989 to 2022", line = 1, adj = 0, cex.main = 1.5)
+#graphics::title(main = "PNW total insurance loss by year: 1989 to 2022", line = 1, adj = 0, cex.main = 1.5)
 pts <- pretty(RMA_allyear$Loss / 1000000)
 pts2 <- pretty(RMA_allyear$Loss)
 axis(2, las = 1, cex.axis = 1, at = pts2, labels = paste(pts, "M", sep = ""), cex.axis=1.5)
@@ -648,7 +644,7 @@ dd2[is.na(dd2)] <- ""
 par(mar=c(8, 8.1, 7, 0), family = 'serif', mgp=c(2, 1, 0), las=0)
 #levels(YYY1$commodity)[1] <- "ADJ GROSS REVENUE"
 barplot(YYY1$loss, names.arg = YYY1$year, las = 3, yaxt="n", col = "lightblue", cex.lab = 1, cex.main = 1, cex.names = 1.5, font.lab = 1, font.axis = 1) 
-graphics::title(main = "PNW total insurance loss by year: 2001 to 2022", line = 1, adj = 0, cex.main = 1.5)
+#graphics::title(main = "PNW total insurance loss by year: 2001 to 2022", line = 1, adj = 0, cex.main = 1.5)
 
 pts <- pretty(YYY1$loss / 1000000)
 pts2 <- pretty(YYY1$loss)
@@ -716,7 +712,7 @@ levels(YYY1$damagecause)[5] <- "Excessive Moisture"
 levels(YYY1$damagecause)[10] <- "Wind"
 
 barplot(YYY1$loss, names.arg = YYY1$damagecause, las = 3, main = "", yaxt="n", col = "lightblue", xlab = "", cex.main = 1, cex.lab = 1, cex.names = 1.5, font.lab = 1, font.axis = 1) 
-graphics::title(main = "PNW total insurance loss by damage cause: 2001 to 2022", line = 1, adj = 0, cex.main = 1.5)
+#graphics::title(main = "PNW total insurance loss by damage cause: 2001 to 2022", line = 1, adj = 0, cex.main = 1.5)
 pts <- pretty(YYY1$loss / 1000000)
 pts2 <- pretty(YYY1$loss)
 axis(2, las = 1, cex.axis = 1, at = pts2, labels = paste(pts, "M", sep = ""), cex.axis=1.5)
@@ -741,22 +737,23 @@ mtext("Insurance Claim Loss ($)", cex = 1.5, side=2, line=5.5)
 
 ```{r message=FALSE, warning=FALSE, error=TRUE, echo = FALSE, fig.width = 8, fig.height = 8, fig.cap=paste("Pacific Northwest agricultural insurance loss per claim: 2001 to 2022.")}
 
-options(scipen = 999)
+#options(scipen = 999)
+
 # PNW_lossperclaim <- ggplot(RMA_damage_PNW, aes(x=factor(year), y=lossperclaim))+
 #      geom_boxplot(outlier.shape = NA)+ theme_bw() + scale_y_continuous(limits = c(0, 500000)) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 # 
 # IPNW_lossperclaim <- ggplot(RMA_damage_IPNW, aes(x=factor(year), y=lossperclaim))+
 #      geom_boxplot(outlier.shape = NA)+ theme_bw() + scale_y_continuous(limits = c(0, 500000))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 
-RMA_damage_IPNW_wheat <- subset(RMA_damage_IPNW, commodity == "Wheat" | commodity == "WHEAT")
-IPNW_wheat_lossperclaim <- ggplot(RMA_damage_IPNW_wheat, aes(x=factor(year), y=lossperclaim))+
-     geom_boxplot(outlier.shape = NA)+ theme_bw() + scale_y_continuous(limits = c(0, 500000))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
-
-RMA_damage_IPNW_apples <- subset(RMA_damage_IPNW, commodity == "Apples" | commodity == "APPLES")
-IPNW_apples_lossperclaim <- ggplot(RMA_damage_IPNW_apples, aes(x=factor(year), y=lossperclaim))+
-     geom_boxplot(outlier.shape = NA)+ theme_bw() + scale_y_continuous(limits = c(0, 500000))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
-
-grid.arrange(IPNW_wheat_lossperclaim,IPNW_apples_lossperclaim, nrow=1, ncol=2)
+# RMA_damage_IPNW_wheat <- subset(RMA_damage_IPNW, commodity == "Wheat" | commodity == "WHEAT")
+# IPNW_wheat_lossperclaim <- ggplot(RMA_damage_IPNW_wheat, aes(x=factor(year), y=lossperclaim))+
+#      geom_boxplot(outlier.shape = NA)+ theme_bw() + scale_y_continuous(limits = c(0, 500000))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+# 
+# RMA_damage_IPNW_apples <- subset(RMA_damage_IPNW, commodity == "Apples" | commodity == "APPLES")
+# IPNW_apples_lossperclaim <- ggplot(RMA_damage_IPNW_apples, aes(x=factor(year), y=lossperclaim))+
+#      geom_boxplot(outlier.shape = NA)+ theme_bw() + scale_y_continuous(limits = c(0, 500000))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+# 
+# grid.arrange(IPNW_wheat_lossperclaim,IPNW_apples_lossperclaim, nrow=1, ncol=2)
 
 ```
 
@@ -940,7 +937,7 @@ YYY1$commodity <- factor(YYY1$commodity)
 
 
 barplot(YYY1$loss, names.arg = YYY1$commodity, las = 3, yaxt="n", col = "lightblue", cex.main = 1.5, cex.lab = 1, cex.names = 1.5, font.lab = 1, font.axis = 1) 
-graphics::title(main = "PNW total insurance loss by commodity: 2001 to 2022", line = 1, adj = 0, cex.main = 1.5)
+#graphics::title(main = "PNW total insurance loss by commodity: 2001 to 2022", line = 1, adj = 0, cex.main = 1.5)
 pts <- pretty(YYY1$loss / 1000000)
 pts2 <- pretty(YYY1$loss)
 axis(2, las = 1, cex.axis = 1, at = pts2, labels = paste(pts, "M", sep = ""), cex.axis=1.5)
@@ -1199,6 +1196,7 @@ stat_summary(fun.y=sum, geom="line") + labs(title = "Scree plot: insurance loss 
 \newpage
 <br></br>
 
+## 4. Inland Pacific Northwest (iPNW) Insurance Summaries Figures
 
 ```{r message=FALSE, warning=FALSE, echo= FALSE, error=TRUE, fig.width = 8, fig.height = 8, fig.cap=paste("Inland Pacific Northwest agricultural insurance loss by year, 2001 to 2022.")}
 
@@ -1244,7 +1242,7 @@ barplot(YYY1$loss, names.arg = YYY1$year, las = 3, cex.names = 1.5, yaxt="n", co
 pts <- pretty(YYY1$loss / 1000000)
 pts2 <- pretty(YYY1$loss)
 axis(2, las = 1.5, at = pts2, labels = paste(pts, "M", sep = ""), cex.axis=1.5)
-graphics::title(main="IPNW total insurance loss: 2001 to 2022", line = 1, cex.main = 1.5, adj = 0)
+#graphics::title(main="IPNW total insurance loss: 2001 to 2022", line = 1, cex.main = 1.5, adj = 0)
 graphics::title(xlab="Years", line=6, cex.lab = 1.5)
 graphics::title(ylab="Insurance claim loss ($)", line=5.5, cex.lab = 1.5)
 
@@ -1330,7 +1328,7 @@ axis(2, las = 1, at = pts2, cex.axis = 1, labels = paste(pts, "M", sep = ""), ce
 #      side = 1,#side 1 = bottom
 #      line = 7.8)
 
-graphics::title(main="IPNW insurance loss by damage cause: 2001 to 2022", line = 1, cex.main = 1.5, adj = 0)
+#graphics::title(main="IPNW insurance loss by damage cause: 2001 to 2022", line = 1, cex.main = 1.5, adj = 0)
 graphics::title(xlab="Damage Cause", line=8.5, cex.lab = 1.5)
 graphics::title(ylab="Insurance claim loss ($)", line=5.5, cex.lab = 1.5)
 
@@ -1426,7 +1424,7 @@ pts <- pretty(YYY1$loss / 1000000)
 pts2 <- pretty(YYY1$loss)
 axis(2, las = 1, at = pts2, cex.axis = 1, labels = paste(pts, "M", sep = ""), cex.axis=1.5)
 
-graphics::title(main="IPNW total insurance loss by commodity: 2001 to 2022", line = 1, cex.main = 1.5, adj = 0)
+#graphics::title(main="IPNW total insurance loss by commodity: 2001 to 2022", line = 1, cex.main = 1.5, adj = 0)
 graphics::title(xlab="Commodity", line=6.5, cex.lab = 1.5)
 graphics::title(ylab="Insurance claim loss ($)", line=5.5, cex.lab = 1.5)
 
@@ -1692,6 +1690,8 @@ colnames(palouse_sumloss_county) <- c("county", "loss")
 
 \newpage
 
+## 5. Inland Pacific Northwest (iPNW) Wheat and Apples Insurance Summaries Figures
+
 ```{r message=FALSE, warning=FALSE, echo= FALSE, error=TRUE, fig.width = 8, fig.height = 8, fig.cap=paste("Inland Pacific Northwest agricultural insurance loss for wheat, by damage cause, 2001 to 2022.")}
 
 usePackage("plotly")
@@ -1770,7 +1770,7 @@ axis(2, las = 1, at = pts2, cex.axis = 1, labels = paste(pts, "M", sep = ""), ce
 #      side = 1,#side 1 = bottom
 #      line = 8)
 
-graphics::title(main="Wheat insurance loss by damage cause: 2001 to 2022", line = 2, cex.main = 1.5, adj = 0)
+#graphics::title(main="Wheat insurance loss by damage cause: 2001 to 2022", line = 2, cex.main = 1.5, adj = 0)
 graphics::title(xlab="Damage Cause", line=11, cex.lab = 1.5)
 graphics::title(ylab="Insurance claim loss ($)", line=5, cex.lab = 1.5)
 
@@ -1840,8 +1840,10 @@ usePackage("scales")
 par(mar=c(11,8,6,2), mgp = c(5, 1, 0)) 
 
 gg2 <- ggplot(WHEAT_damage_top) + 
-    geom_bar(aes(fill=damagecause, y=loss, x=year), stat="identity") + theme_bw() + theme(panel.grid.major=element_blank(),panel.grid.minor=element_blank()) + ggtitle("IPNW wheat loss vs. year - top damage causes") + theme(axis.title.y = element_text(size=20), axis.title.x = element_text(size = 20), axis.text.y = element_text(size=rel(1.2), hjust = 1), axis.text.x = element_text(size=rel(1.2), angle = 90, hjust = 1)) + theme(plot.title = element_text(size =20))  +  scale_x_discrete(name = "Year", limits=c(2001:2022)) + theme(legend.text=element_text(size=20)) + scale_fill_manual("legend", values = c("Drought" = "red", "Decline in Price" = "blue", "Heat" = "gray")) + theme(legend.title=element_text(size=20, face = "bold")) + theme(plot.title = element_text(size=20, face = "bold")) + scale_y_continuous(name = "Insurance claim loss ($)", labels = c("0 M", "500 M", "1 B", "1.5 B"), sec.axis = sec_axis(~ .*1, name="Wheat Production ($)", labels = c("0 M", "500 M", "1 B", "1.5 B"))) + theme(legend.position="bottom", legend.box = "vertical") + theme(text=element_text(size=20,  family="serif")) + geom_line(data = wheat_production, aes(x = year, y = utilization, colour = legend))+ scale_color_manual(values=c("black"), name="") +
+    geom_bar(aes(fill=damagecause, y=loss, x=year), stat="identity") + theme_bw() + theme(panel.grid.major=element_blank(),panel.grid.minor=element_blank()) + theme(axis.title.y = element_text(size=20), axis.title.x = element_text(size = 20), axis.text.y = element_text(size=rel(1.2), hjust = 1), axis.text.x = element_text(size=rel(1.2), angle = 90, hjust = 1)) + theme(plot.title = element_text(size =20))  +  scale_x_discrete(name = "Year", limits=c(2001:2022)) + theme(legend.text=element_text(size=20)) + scale_fill_manual("legend", values = c("Drought" = "red", "Decline in Price" = "blue", "Heat" = "gray")) + theme(legend.title=element_text(size=20, face = "bold")) + theme(plot.title = element_text(size=20, face = "bold")) + scale_y_continuous(name = "Insurance claim loss ($)", labels = c("0 M", "500 M", "1 B", "1.5 B"), sec.axis = sec_axis(~ .*1, name="Wheat Production ($)", labels = c("0 M", "500 M", "1 B", "1.5 B"))) + theme(legend.position="bottom", legend.box = "vertical") + theme(text=element_text(size=20,  family="serif")) + geom_line(data = wheat_production, aes(x = year, y = utilization, colour = legend))+ scale_color_manual(values=c("black"), name="") +
   guides(color = guide_legend(nrow = 2)) 
+
+#+ ggtitle("IPNW wheat loss vs. year - top damage causes") 
 
 
 print(gg2)
@@ -1936,7 +1938,9 @@ text_MT <- list("sp.text", c(-115,47.5), "Montana", cex = .8)
     map.layout.1 <-list(map.na,map.scale.1, text0, text1, text_WA, text_ID, text_OR, text_MT, states, make.NUMB.sp.label(RMA_damage_IPNW_com_map2))
 
 
-spplot(RMA_damage_IPNW_com_map2, "loss", main = "Wheat loss: 2001 - 2022", sub = "Drought and Heat Damage Cause \n\n 1 Lewis: 2 Lincoln: 3 Garfield: 4 Columbia: 5 Walla Walla: 6 Umatilla: 7 Wallowa\n8 Nez Perce: 9 Douglas: 10 Wasco: 11 Latah: 12 Sherman: 13 Morrow: 14 Union\n15 Adams: 16 Whitman: 17 Asotin: 18 Grant: 19 Benewah: 20 Spokane\n21 Gilliam: 22 Benton: 23 Idaho: 24 Franklin", col.regions = my.palette, cuts =6, col = "gray", scales = list(draw = TRUE), sp.layout=list(map.layout.1), colorkey=list(at=seq(0, 140000000, 20000000), labels = c("0M", "20M", "40M", "60M", "80M", "100M", "120M", "140M")))
+spplot(RMA_damage_IPNW_com_map2, "loss",  sub = "Drought and Heat Damage Cause \n\n 1 Lewis: 2 Lincoln: 3 Garfield: 4 Columbia: 5 Walla Walla: 6 Umatilla: 7 Wallowa\n8 Nez Perce: 9 Douglas: 10 Wasco: 11 Latah: 12 Sherman: 13 Morrow: 14 Union\n15 Adams: 16 Whitman: 17 Asotin: 18 Grant: 19 Benewah: 20 Spokane\n21 Gilliam: 22 Benton: 23 Idaho: 24 Franklin", col.regions = my.palette, cuts =6, col = "gray", scales = list(draw = TRUE), sp.layout=list(map.layout.1), colorkey=list(at=seq(0, 140000000, 20000000), labels = c("0M", "20M", "40M", "60M", "80M", "100M", "120M", "140M")))
+
+#main = "Wheat loss: 2001 - 2022",
 
 ```
 
@@ -2080,7 +2084,7 @@ axis(2, las = 1, at = pts2, cex.axis = 1, labels = paste(pts, "M", sep = ""), ce
 #      side = 1,#side 1 = bottom
 #      line = 8)
 
-graphics::title(main="Apples insurance loss by damage cause: 2001 to 2022", line = 2, cex.main = 1.5, adj = 0)
+#graphics::title(main="Apples insurance loss by damage cause: 2001 to 2022", line = 2, cex.main = 1.5, adj = 0)
 graphics::title(xlab="Damage Cause", line=11.5, cex.lab = 1.5)
 graphics::title(ylab="Insurance claim loss ($)", line=4, cex.lab = 1.5)
 
@@ -2233,8 +2237,10 @@ par(mar=c(11,8,6,2), mgp = c(5, 1, 0))
 
 
 gg2 <- ggplot(APPLES_damage_top) + 
-    geom_bar(aes(fill=damagecause, y=loss, x=year), stat="identity") + theme_bw() + theme(panel.grid.major=element_blank(),panel.grid.minor=element_blank()) + ggtitle("IPNW apple loss vs. year - top damage causes") + theme(axis.title.y = element_text(size=20), axis.title.x = element_text(size = 20), axis.text.y = element_text(size=rel(1.2), hjust = 1), axis.text.x = element_text(size=rel(1.2), angle = 90, hjust = 1)) + theme(plot.title = element_text(size =20))  +  scale_x_discrete(name = "Year", limits=c(2001:2022)) + theme(legend.text=element_text(size=20)) + scale_fill_manual("legend", values = c("Hail" = "red", "Frost" = "blue", "Freeze" = "gray", "Cold Wet Weather" = "green", "Heat" = "magenta", "Wind/Excess Wind" = "purple")) + theme(legend.title=element_text(size=20, face = "bold")) + theme(plot.title = element_text(size=20, face = "bold")) + scale_y_continuous(name = "Insurance claim loss ($)", label = unit_format(unit = "M", scale = 1e-6, digits = 0), sec.axis = sec_axis(~ .*15, name="Apple Production ($)", labels = c("0 M", "500 M", "1 B", "1.5 B", "2.0 B", "2.5 B"))) + theme(legend.position="bottom", legend.box = "vertical") + theme(text=element_text(size=20,  family="serif")) + geom_line(data = apple_production, aes(x = year, y = utilization/15, colour = legend))+ scale_color_manual(values=c("black"), name="") +
+    geom_bar(aes(fill=damagecause, y=loss, x=year), stat="identity") + theme_bw() + theme(panel.grid.major=element_blank(),panel.grid.minor=element_blank()) + theme(axis.title.y = element_text(size=20), axis.title.x = element_text(size = 20), axis.text.y = element_text(size=rel(1.2), hjust = 1), axis.text.x = element_text(size=rel(1.2), angle = 90, hjust = 1)) + theme(plot.title = element_text(size =20))  +  scale_x_discrete(name = "Year", limits=c(2001:2022)) + theme(legend.text=element_text(size=20)) + scale_fill_manual("legend", values = c("Hail" = "red", "Frost" = "blue", "Freeze" = "gray", "Cold Wet Weather" = "green", "Heat" = "magenta", "Wind/Excess Wind" = "purple")) + theme(legend.title=element_text(size=20, face = "bold")) + theme(plot.title = element_text(size=20, face = "bold")) + scale_y_continuous(name = "Insurance claim loss ($)", label = unit_format(unit = "M", scale = 1e-6, digits = 0), sec.axis = sec_axis(~ .*15, name="Apple Production ($)", labels = c("0 M", "500 M", "1 B", "1.5 B", "2.0 B", "2.5 B"))) + theme(legend.position="bottom", legend.box = "vertical") + theme(text=element_text(size=20,  family="serif")) + geom_line(data = apple_production, aes(x = year, y = utilization/15, colour = legend))+ scale_color_manual(values=c("black"), name="") +
   guides(color = guide_legend(nrow = 2)) 
+
+#+ ggtitle("IPNW apple loss vs. year - top damage causes")
 
 print(gg2)
 
@@ -2329,8 +2335,9 @@ text_MT <- list("sp.text", c(-115,47.5), "Montana", cex = .8)
     map.layout.1 <-list(map.na,map.scale.1, text0, text1, text_WA, text_ID, text_OR, text_MT, states, make.NUMB.sp.label(RMA_damage_IPNW_com_map2))
 
 
-spplot(RMA_damage_IPNW_com_map2, "loss", main = "Apples loss: 2001 - 2022", sub = "Freeze, Frost, Hail Damage Cause \n\n 1 Lewis: 2 Lincoln: 3 Garfield: 4 Columbia: 5 Walla Walla: 6 Umatilla: 7 Wallowa\n8 Nez Perce: 9 Douglas: 10 Wasco: 11 Latah: 12 Sherman: 13 Morrow: 14 Union\n15 Adams: 16 Whitman: 17 Asotin: 18 Grant: 19 Benewah: 20 Spokane\n21 Gilliam: 22 Benton: 23 Idaho: 24 Franklin", col.regions = my.palette, cuts =6, col = "gray", scales = list(draw = TRUE), sp.layout=list(map.layout.1), colorkey=list(at=seq(0, 30000000, 5000000), labels = c("0M", "5M", "10M", "15M", "20M", "25M", "30M")))
+spplot(RMA_damage_IPNW_com_map2, "loss",  sub = "Freeze, Frost, Hail Damage Cause \n\n 1 Lewis: 2 Lincoln: 3 Garfield: 4 Columbia: 5 Walla Walla: 6 Umatilla: 7 Wallowa\n8 Nez Perce: 9 Douglas: 10 Wasco: 11 Latah: 12 Sherman: 13 Morrow: 14 Union\n15 Adams: 16 Whitman: 17 Asotin: 18 Grant: 19 Benewah: 20 Spokane\n21 Gilliam: 22 Benton: 23 Idaho: 24 Franklin", col.regions = my.palette, cuts =6, col = "gray", scales = list(draw = TRUE), sp.layout=list(map.layout.1), colorkey=list(at=seq(0, 30000000, 5000000), labels = c("0M", "5M", "10M", "15M", "20M", "25M", "30M")))
 
+#main = "Apples loss: 2001 - 2022",
 
 #spplot(RMA_damage_IPNW_com_map2, "loss", col.regions = my.palette, cuts =6, col = "gray", scales = list(draw = TRUE), sp.layout=list(map.layout.1))
 
@@ -2341,59 +2348,61 @@ spplot(RMA_damage_IPNW_com_map2, "loss", main = "Apples loss: 2001 - 2022", sub 
 <br></br>
 
 
-
 ```{r message=FALSE, warning=FALSE, echo= FALSE, error=TRUE, fig.width = 8, fig.height = 8, fig.cap=paste("Top panel: biplot of insurance loss for the entire PNW, for wheat by county, with damage cause as the factor loadings. Bottom panel: Scree plot. Data from 2001 is 2022 is used.")}
 
 #PNW wheat
 
-usePackage("ggplot2")
-usePackage("ggfortify")
-usePackage("reshape2") 
-
-RMA_damage_PNW_wheat <- subset(RMA_damage_PNW_com, commodity == "Wheat")
-
-RMA_damage_PNW_transformed_wheat <- dcast(RMA_damage_PNW_wheat, county + state ~ damagecause, value.var = c("loss"), sum)
-RMA_damage_PNW_transformed_wheat$statecounty <- paste(RMA_damage_PNW_transformed_wheat$county, "_", RMA_damage_PNW_transformed_wheat$state, sep="")
-rownames(RMA_damage_PNW_transformed_wheat) <- RMA_damage_PNW_transformed_wheat$statecounty
-#RMA_damage_PNW_exogenous_wheat <- RMA_damage_PNW_transformed_wheat[,3:27]
-RMA_damage_PNW_exogenous_wheat <- RMA_damage_PNW_transformed_wheat
-
-#ggplot2::autoplot(prcomp(RMA_damage_PNW_exogenous_month), data = RMA_damage_PNW_transformed_month, colour = 'month', loadings = TRUE, loadings.label = TRUE, loadings.label.size  = 3, label = FALSE, label.size = 3, legend = FALSE) + geom_text(vjust=-1, label=rownames(RMA_damage_PNW_exogenous_month)) + theme(legend.position = "none")
-
-#PNW wheat
-
-#RMA_damage_PNW_exogenous_wheat <- cbind(RMA_damage_PNW_exogenous_wheat[,4:5], RMA_damage_PNW_exogenous_wheat[8], RMA_damage_PNW_exogenous_wheat[10], RMA_damage_PNW_exogenous_wheat[,13:16], RMA_damage_PNW_exogenous_wheat[18:19])
-
-RMA_damage_PNW_exogenous_wheat <- RMA_damage_PNW_exogenous_wheat[3:12]
-
-fit <- princomp(RMA_damage_PNW_exogenous_wheat, cor=TRUE)
-#ggplot2::autoplot(prcomp(RMA_damage_PNW_exogenous_wheat, scale = TRUE, center = TRUE), data = RMA_damage_PNW_transformed_wheat, colour = 'county', loadings = TRUE, loadings.label = TRUE, loadings.label.size  = 3, label = FALSE, label.size = 3, legend = FALSE) + geom_text(vjust=-1, label=rownames(RMA_damage_PNW_exogenous_wheat)) + theme(legend.position = "none")
-
-plot1 <- ggplot2::autoplot(prcomp(RMA_damage_PNW_exogenous_wheat, center = TRUE, scale = TRUE),  data = RMA_damage_PNW_transformed_wheat, loadings = TRUE, loadings.label = TRUE, loadings.label.size  = 3, colour="state", label = FALSE, label.size = 2, legend = FALSE,  loadings.label.repel=TRUE)  + theme_bw()   + ggrepel::geom_text_repel(label=rownames(RMA_damage_PNW_exogenous_wheat), size = 3) + theme(legend.position = "none") + ggtitle("Principal Components Analysis: PNW wheat insurance loss by county with \ndamage cause loadings ") + theme(plot.title = element_text(size =12, family = "Serif")) + theme(axis.title.y = element_text(family = "Serif", size=12), axis.title.x = element_text(family = "Serif", size = 12), axis.text.x = element_text(size=rel(1.5), hjust = 1, family = "Serif"), axis.text.y = element_text(size=rel(1.5), hjust = 1, family = "Serif"))
-
-
-#scree plot
-
-std_dev <- fit$sdev
-
-pr_var <- std_dev^2
-
-#pr_var[1:10]
-
-prop_varex <- pr_var/sum(pr_var)
-
-prop_varex <- data.frame(prop_varex)
-
-prop_varex$comp <- c(1:max(nrow(prop_varex)))
-
-prop_varex$prop_varex <- as.numeric(prop_varex$prop_varex)
-
-p <- ggplot(prop_varex, aes(as.factor(comp), prop_varex, group=1))
-plot2 <- p + geom_point(shape = 21) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5)) +
-  xlab("comp") + theme_bw() +
-stat_summary(fun.y=sum, geom="line") + labs(title = "Scree plot: insurance loss for the entire PNW, for wheat by county, with \ndamage cause as the factor loadings.", x = "principal components", y = "% explained variance")
-
-grid.arrange(plot1, plot2, nrow=2, heights=c(2,1))
+# usePackage("ggplot2")
+# usePackage("ggfortify")
+# usePackage("reshape2") 
+# 
+# RMA_damage_PNW_wheat <- subset(RMA_damage_PNW_com, commodity == "Wheat")
+# 
+# RMA_damage_PNW_transformed_wheat <- dcast(RMA_damage_PNW_wheat, county + state ~ damagecause, value.var = c("loss"), sum)
+# RMA_damage_PNW_transformed_wheat$statecounty <- paste(RMA_damage_PNW_transformed_wheat$county, "_", RMA_damage_PNW_transformed_wheat$state, sep="")
+# rownames(RMA_damage_PNW_transformed_wheat) <- RMA_damage_PNW_transformed_wheat$statecounty
+# #RMA_damage_PNW_exogenous_wheat <- RMA_damage_PNW_transformed_wheat[,3:27]
+# RMA_damage_PNW_exogenous_wheat <- RMA_damage_PNW_transformed_wheat
+# 
+# #ggplot2::autoplot(prcomp(RMA_damage_PNW_exogenous_month), data = RMA_damage_PNW_transformed_month, colour = 'month', loadings = TRUE, loadings.label = TRUE, loadings.label.size  = 3, label = FALSE, label.size = 3, legend = FALSE) + geom_text(vjust=-1, label=rownames(RMA_damage_PNW_exogenous_month)) + theme(legend.position = "none")
+# 
+# #PNW wheat
+# 
+# #RMA_damage_PNW_exogenous_wheat <- cbind(RMA_damage_PNW_exogenous_wheat[,4:5], RMA_damage_PNW_exogenous_wheat[8], RMA_damage_PNW_exogenous_wheat[10], RMA_damage_PNW_exogenous_wheat[,13:16], RMA_damage_PNW_exogenous_wheat[18:19])
+# 
+# RMA_damage_PNW_exogenous_wheat <- RMA_damage_PNW_exogenous_wheat[3:12]
+# 
+# fit <- princomp(RMA_damage_PNW_exogenous_wheat, cor=TRUE)
+# #ggplot2::autoplot(prcomp(RMA_damage_PNW_exogenous_wheat, scale = TRUE, center = TRUE), data = RMA_damage_PNW_transformed_wheat, colour = 'county', loadings = TRUE, loadings.label = TRUE, loadings.label.size  = 3, label = FALSE, label.size = 3, legend = FALSE) + geom_text(vjust=-1, label=rownames(RMA_damage_PNW_exogenous_wheat)) + theme(legend.position = "none")
+# 
+# plot1 <- ggplot2::autoplot(prcomp(RMA_damage_PNW_exogenous_wheat, center = TRUE, scale = TRUE),  data = RMA_damage_PNW_transformed_wheat, loadings = TRUE, loadings.label = TRUE, loadings.label.size  = 3, colour="state", label = FALSE, label.size = 2, legend = FALSE,  loadings.label.repel=TRUE)  + theme_bw()   + ggrepel::geom_text_repel(label=rownames(RMA_damage_PNW_exogenous_wheat), size = 3) + theme(legend.position = "none") + theme(plot.title = element_text(size =12, family = "Serif")) + theme(axis.title.y = element_text(family = "Serif", size=12), axis.title.x = element_text(family = "Serif", size = 12), axis.text.x = element_text(size=rel(1.5), hjust = 1, family = "Serif"), axis.text.y = element_text(size=rel(1.5), hjust = 1, family = "Serif"))
+# 
+# #+ ggtitle("Principal Components Analysis: PNW wheat insurance loss by county with \ndamage cause loadings ") 
+# 
+# #scree plot
+# 
+# std_dev <- fit$sdev
+# 
+# pr_var <- std_dev^2
+# 
+# #pr_var[1:10]
+# 
+# prop_varex <- pr_var/sum(pr_var)
+# 
+# prop_varex <- data.frame(prop_varex)
+# 
+# prop_varex$comp <- c(1:max(nrow(prop_varex)))
+# 
+# prop_varex$prop_varex <- as.numeric(prop_varex$prop_varex)
+# 
+# p <- ggplot(prop_varex, aes(as.factor(comp), prop_varex, group=1))
+# plot2 <- p + geom_point(shape = 21) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5)) +
+#   xlab("comp") + theme_bw() +
+# stat_summary(fun.y=sum, geom="line") + labs(x = "principal components", y = "% explained variance")
+# 
+# #title = "Scree plot: insurance loss for the entire PNW, for wheat by county, with \ndamage cause as the factor loadings.",
+# 
+# grid.arrange(plot1, plot2, nrow=2, heights=c(2,1))
 
 ```
 \newpage
@@ -2403,48 +2412,52 @@ grid.arrange(plot1, plot2, nrow=2, heights=c(2,1))
 
 #PNW apples
 
-usePackage("ggplot2")
-usePackage("ggfortify")
-usePackage("reshape2")
-RMA_damage_PNW_apples <- subset(RMA_damage_PNW_com, commodity == "Apples")
-
-RMA_damage_PNW_transformed_apples <- dcast(RMA_damage_PNW_apples, county + state ~ damagecause, value.var = c("loss"), sum)
-RMA_damage_PNW_transformed_apples$statecounty <- paste(RMA_damage_PNW_transformed_apples$county, "_", RMA_damage_PNW_transformed_apples$state, sep="")
-rownames(RMA_damage_PNW_transformed_apples) <- RMA_damage_PNW_transformed_apples$statecounty
-RMA_damage_PNW_exogenous_apples <- RMA_damage_PNW_transformed_apples[,3:10]
-
-#RMA_damage_PNW_exogenous_apples <- cbind(RMA_damage_PNW_exogenous_apples[,1:4], RMA_damage_PNW_exogenous_apples[,7:10], RMA_damage_PNW_exogenous_apples[,13:14])
-
-fit <- princomp(RMA_damage_PNW_exogenous_apples, cor=TRUE)
-#PNW apples
-
-#ggplot2::autoplot(prcomp(RMA_damage_PNW_exogenous_apples), data = RMA_damage_PNW_transformed_apples, colour = 'county', loadings = TRUE, loadings.label = TRUE, loadings.label.size  = 3, label = FALSE, label.size = 3, legend = FALSE) + geom_text(vjust=-1, label=rownames(RMA_damage_PNW_exogenous_apples)) + theme(legend.position = "none")
-
-plot1 <- ggplot2::autoplot(prcomp(RMA_damage_PNW_exogenous_apples, center = TRUE, scale = TRUE),  data = RMA_damage_PNW_transformed_apples, colour = 'state', loadings = TRUE, loadings.label = TRUE, loadings.label.size  = 3, label = FALSE, label.size = 2, legend = FALSE, loadings.label.repel=TRUE)  + theme_bw()   + ggrepel::geom_text_repel(label=rownames(RMA_damage_PNW_exogenous_apples)) + theme(legend.position = "none") + ggtitle("Principal Components Analysis: PNW apples insurance loss by county with \ndamage cause loadings ") + theme(plot.title = element_text(size =12, family = "Serif")) + theme(axis.title.y = element_text(family = "Serif", size=12), axis.title.x = element_text(family = "Serif", size = 12), axis.text.x = element_text(size=rel(1.5), hjust = 1, family = "Serif"), axis.text.y = element_text(size=rel(1.5), hjust = 1, family = "Serif"))
-
-
-#scree plot
-
-std_dev <- fit$sdev
-
-pr_var <- std_dev^2
-
-#pr_var[1:10]
-
-prop_varex <- pr_var/sum(pr_var)
-
-prop_varex <- data.frame(prop_varex)
-
-prop_varex$comp <- c(1:max(nrow(prop_varex)))
-
-prop_varex$prop_varex <- as.numeric(prop_varex$prop_varex)
-
-p <- ggplot(prop_varex, aes(as.factor(comp), prop_varex, group=1))
-plot2 <- p + geom_point(shape = 21) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5)) +
-  xlab("comp") + theme_bw() +
-stat_summary(fun.y=sum, geom="line") + labs(title = "Scree plot: insurance loss for the entire PNW, for apples by county, with \n damage cause as the factor loadings.", x = "principal components", y = "% explained variance")
-
-grid.arrange(plot1, plot2, nrow=2, heights=c(2,1))
+# usePackage("ggplot2")
+# usePackage("ggfortify")
+# usePackage("reshape2")
+# RMA_damage_PNW_apples <- subset(RMA_damage_PNW_com, commodity == "Apples")
+# 
+# RMA_damage_PNW_transformed_apples <- dcast(RMA_damage_PNW_apples, county + state ~ damagecause, value.var = c("loss"), sum)
+# RMA_damage_PNW_transformed_apples$statecounty <- paste(RMA_damage_PNW_transformed_apples$county, "_", RMA_damage_PNW_transformed_apples$state, sep="")
+# rownames(RMA_damage_PNW_transformed_apples) <- RMA_damage_PNW_transformed_apples$statecounty
+# RMA_damage_PNW_exogenous_apples <- RMA_damage_PNW_transformed_apples[,3:10]
+# 
+# #RMA_damage_PNW_exogenous_apples <- cbind(RMA_damage_PNW_exogenous_apples[,1:4], RMA_damage_PNW_exogenous_apples[,7:10], RMA_damage_PNW_exogenous_apples[,13:14])
+# 
+# fit <- princomp(RMA_damage_PNW_exogenous_apples, cor=TRUE)
+# #PNW apples
+# 
+# #ggplot2::autoplot(prcomp(RMA_damage_PNW_exogenous_apples), data = RMA_damage_PNW_transformed_apples, colour = 'county', loadings = TRUE, loadings.label = TRUE, loadings.label.size  = 3, label = FALSE, label.size = 3, legend = FALSE) + geom_text(vjust=-1, label=rownames(RMA_damage_PNW_exogenous_apples)) + theme(legend.position = "none")
+# 
+# plot1 <- ggplot2::autoplot(prcomp(RMA_damage_PNW_exogenous_apples, center = TRUE, scale = TRUE),  data = RMA_damage_PNW_transformed_apples, colour = 'state', loadings = TRUE, loadings.label = TRUE, loadings.label.size  = 3, label = FALSE, label.size = 2, legend = FALSE, loadings.label.repel=TRUE)  + theme_bw()   + ggrepel::geom_text_repel(label=rownames(RMA_damage_PNW_exogenous_apples)) + theme(legend.position = "none") + theme(plot.title = element_text(size =12, family = "Serif")) + theme(axis.title.y = element_text(family = "Serif", size=12), axis.title.x = element_text(family = "Serif", size = 12), axis.text.x = element_text(size=rel(1.5), hjust = 1, family = "Serif"), axis.text.y = element_text(size=rel(1.5), hjust = 1, family = "Serif"))
+# 
+# #+ ggtitle("Principal Components Analysis: PNW apples insurance loss by county with \ndamage cause loadings ") 
+# 
+# 
+# #scree plot
+# 
+# std_dev <- fit$sdev
+# 
+# pr_var <- std_dev^2
+# 
+# #pr_var[1:10]
+# 
+# prop_varex <- pr_var/sum(pr_var)
+# 
+# prop_varex <- data.frame(prop_varex)
+# 
+# prop_varex$comp <- c(1:max(nrow(prop_varex)))
+# 
+# prop_varex$prop_varex <- as.numeric(prop_varex$prop_varex)
+# 
+# p <- ggplot(prop_varex, aes(as.factor(comp), prop_varex, group=1))
+# plot2 <- p + geom_point(shape = 21) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5)) +
+#   xlab("comp") + theme_bw() +
+# stat_summary(fun.y=sum, geom="line") + labs( x = "principal components", y = "% explained variance")
+# 
+# #title = "Scree plot: insurance loss for the entire PNW, for apples by county, with \n damage cause as the factor loadings.",
+# 
+# grid.arrange(plot1, plot2, nrow=2, heights=c(2,1))
 
 ```
 
@@ -2456,57 +2469,59 @@ grid.arrange(plot1, plot2, nrow=2, heights=c(2,1))
 
 #PNW barley
 
-usePackage("ggplot2")
-usePackage("ggfortify")
-usePackage("reshape2")
-
-RMA_damage_PNW_barley <- subset(RMA_damage_PNW_com, commodity == "Barley")
-
-RMA_damage_PNW_transformed_barley <- dcast(RMA_damage_PNW_barley, county + state ~ damagecause, value.var = c("loss"), sum)
-RMA_damage_PNW_transformed_barley$statecounty <- paste(RMA_damage_PNW_transformed_barley$county, "_", RMA_damage_PNW_transformed_barley$state, sep="")
-rownames(RMA_damage_PNW_transformed_barley) <- RMA_damage_PNW_transformed_barley$statecounty
-#RMA_damage_PNW_exogenous_barley <- RMA_damage_PNW_transformed_barley[,3:23]
-RMA_damage_PNW_exogenous_barley <- RMA_damage_PNW_transformed_barley[3:12]
-
-#RMA_damage_PNW_exogenous_barley <- cbind(RMA_damage_PNW_exogenous_barley[,3:4], RMA_damage_PNW_exogenous_barley[7], RMA_damage_PNW_exogenous_barley[9], RMA_damage_PNW_exogenous_barley[,12:15], RMA_damage_PNW_exogenous_barley[17:18])
-
-fit <- princomp(RMA_damage_PNW_exogenous_barley, cor=TRUE)
-
-#PNW barley
-
-#ggplot2::autoplot(prcomp(RMA_damage_PNW_exogenous_barley), data = RMA_damage_PNW_transformed_barley, colour = 'county', loadings = TRUE, loadings.label = TRUE, loadings.label.size  = 3, label = FALSE, label.size = 3, legend = FALSE) + geom_text(vjust=-1, label=rownames(RMA_damage_PNW_exogenous_barley)) + theme(legend.position = "none")
-
-plot1 <- ggplot2::autoplot(prcomp(RMA_damage_PNW_exogenous_barley, center = TRUE, scale = TRUE), data = RMA_damage_PNW_transformed_barley, colour = 'state', loadings = TRUE, loadings.label = TRUE, loadings.label.size  = 3, label = FALSE, label.size = 2, legend = FALSE, loadings.label.repel=TRUE)  + theme_bw()   + ggrepel::geom_text_repel(label=rownames(RMA_damage_PNW_exogenous_barley)) + theme(legend.position = "none") + ggtitle("Principal Components Analysis: PNW barley insurance loss by county with \ndamage cause loadings ") + theme(plot.title = element_text(size =12, family = "Serif")) + theme(axis.title.y = element_text(family = "Serif", size=12), axis.title.x = element_text(family = "Serif", size = 12), axis.text.x = element_text(size=rel(1.5), hjust = 1, family = "Serif"), axis.text.y = element_text(size=rel(1.5), hjust = 1, family = "Serif"))
-
-
-#scree plot
-
-std_dev <- fit$sdev
-
-pr_var <- std_dev^2
-
-#pr_var[1:10]
-
-prop_varex <- pr_var/sum(pr_var)
-
-prop_varex <- data.frame(prop_varex)
-
-prop_varex$comp <- c(1:max(nrow(prop_varex)))
-
-prop_varex$prop_varex <- as.numeric(prop_varex$prop_varex)
-
-p <- ggplot(prop_varex, aes(as.factor(comp), prop_varex, group=1))
-plot2 <- p + geom_point(shape = 21) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5)) +
-  xlab("comp") + theme_bw() +
-stat_summary(fun.y=sum, geom="line") + labs(title = "Scree plot: insurance loss for the entire PNW, for barley by county, with \ndamage cause as the factor loadings.", x = "principal components", y = "% explained variance")
-
-grid.arrange(plot1, plot2, nrow=2, heights=c(2,1))
+# usePackage("ggplot2")
+# usePackage("ggfortify")
+# usePackage("reshape2")
+# 
+# RMA_damage_PNW_barley <- subset(RMA_damage_PNW_com, commodity == "Barley")
+# 
+# RMA_damage_PNW_transformed_barley <- dcast(RMA_damage_PNW_barley, county + state ~ damagecause, value.var = c("loss"), sum)
+# RMA_damage_PNW_transformed_barley$statecounty <- paste(RMA_damage_PNW_transformed_barley$county, "_", RMA_damage_PNW_transformed_barley$state, sep="")
+# rownames(RMA_damage_PNW_transformed_barley) <- RMA_damage_PNW_transformed_barley$statecounty
+# #RMA_damage_PNW_exogenous_barley <- RMA_damage_PNW_transformed_barley[,3:23]
+# RMA_damage_PNW_exogenous_barley <- RMA_damage_PNW_transformed_barley[3:12]
+# 
+# #RMA_damage_PNW_exogenous_barley <- cbind(RMA_damage_PNW_exogenous_barley[,3:4], RMA_damage_PNW_exogenous_barley[7], RMA_damage_PNW_exogenous_barley[9], RMA_damage_PNW_exogenous_barley[,12:15], RMA_damage_PNW_exogenous_barley[17:18])
+# 
+# fit <- princomp(RMA_damage_PNW_exogenous_barley, cor=TRUE)
+# 
+# #PNW barley
+# 
+# #ggplot2::autoplot(prcomp(RMA_damage_PNW_exogenous_barley), data = RMA_damage_PNW_transformed_barley, colour = 'county', loadings = TRUE, loadings.label = TRUE, loadings.label.size  = 3, label = FALSE, label.size = 3, legend = FALSE) + geom_text(vjust=-1, label=rownames(RMA_damage_PNW_exogenous_barley)) + theme(legend.position = "none")
+# 
+# plot1 <- ggplot2::autoplot(prcomp(RMA_damage_PNW_exogenous_barley, center = TRUE, scale = TRUE), data = RMA_damage_PNW_transformed_barley, colour = 'state', loadings = TRUE, loadings.label = TRUE, loadings.label.size  = 3, label = FALSE, label.size = 2, legend = FALSE, loadings.label.repel=TRUE)  + theme_bw()   + ggrepel::geom_text_repel(label=rownames(RMA_damage_PNW_exogenous_barley)) + theme(legend.position = "none") + ggtitle("Principal Components Analysis: PNW barley insurance loss by county with \ndamage cause loadings ") + theme(plot.title = element_text(size =12, family = "Serif")) + theme(axis.title.y = element_text(family = "Serif", size=12), axis.title.x = element_text(family = "Serif", size = 12), axis.text.x = element_text(size=rel(1.5), hjust = 1, family = "Serif"), axis.text.y = element_text(size=rel(1.5), hjust = 1, family = "Serif"))
+# 
+# 
+# #scree plot
+# 
+# std_dev <- fit$sdev
+# 
+# pr_var <- std_dev^2
+# 
+# #pr_var[1:10]
+# 
+# prop_varex <- pr_var/sum(pr_var)
+# 
+# prop_varex <- data.frame(prop_varex)
+# 
+# prop_varex$comp <- c(1:max(nrow(prop_varex)))
+# 
+# prop_varex$prop_varex <- as.numeric(prop_varex$prop_varex)
+# 
+# p <- ggplot(prop_varex, aes(as.factor(comp), prop_varex, group=1))
+# plot2 <- p + geom_point(shape = 21) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5)) +
+#   xlab("comp") + theme_bw() +
+# stat_summary(fun.y=sum, geom="line") + labs(title = "Scree plot: insurance loss for the entire PNW, for barley by county, with \ndamage cause as the factor loadings.", x = "principal components", y = "% explained variance")
+# 
+# grid.arrange(plot1, plot2, nrow=2, heights=c(2,1))
 
 ```
 
 
 
 \newpage
+
+## 6. Inland Pacific Northwest (iPNW) PCA Figures
 
 ```{r message=FALSE, warning=FALSE, echo= FALSE, error=TRUE, fig.width = 8, fig.height = 8, fig.cap=paste("Top panel: biplot of insurance loss for the inland PNW, for all commodities by county, with damage cause as the factor loadings. Bottom panel: Scree plot. Data from 2001 is 2022 is used.")}
 
@@ -2525,7 +2540,9 @@ RMA_damage_PNW_exogenous <- RMA_damage_PNW_transformed[,3:12]
 par(mar=c(8, 6.1, 4, 2.1), family = 'serif', mgp=c(4, 1, 0), las=0)
 
 fit <- stats::princomp(RMA_damage_PNW_exogenous, cor=TRUE)
-plot1 <- ggplot2::autoplot(prcomp(RMA_damage_PNW_exogenous, center = TRUE, scale = TRUE), data = RMA_damage_PNW_transformed, colour = 'state', loadings = TRUE, loadings.label = TRUE, loadings.label.size  = 3, label = FALSE, label.size = 2, legend = FALSE,loadings.label.repel=TRUE)  + theme_bw()   + ggrepel::geom_text_repel( label=rownames(RMA_damage_PNW_exogenous), size=3) + theme(legend.position = "none") + ggtitle("Principal Components Analysis: IPNW insurance loss by county with \ndamage cause loadings: 2001 to 2022") + theme(plot.title = element_text(size =12, family = "Serif")) + theme(axis.title.y = element_text(family = "Serif", size=12), axis.title.x = element_text(family = "Serif", size = 12), axis.text.x = element_text(size=rel(1.5), hjust = 1, family = "Serif"), axis.text.y = element_text(size=rel(1.5), hjust = 1, family = "Serif"))
+plot1 <- ggplot2::autoplot(prcomp(RMA_damage_PNW_exogenous, center = TRUE, scale = TRUE), data = RMA_damage_PNW_transformed, colour = 'state', loadings = TRUE, loadings.label = TRUE, loadings.label.size  = 3, label = FALSE, label.size = 2, legend = FALSE,loadings.label.repel=TRUE)  + theme_bw()   + ggrepel::geom_text_repel( label=rownames(RMA_damage_PNW_exogenous), size=3) + theme(legend.position = "none") + theme(plot.title = element_text(size =12, family = "Serif")) + theme(axis.title.y = element_text(family = "Serif", size=12), axis.title.x = element_text(family = "Serif", size = 12), axis.text.x = element_text(size=rel(1.5), hjust = 1, family = "Serif"), axis.text.y = element_text(size=rel(1.5), hjust = 1, family = "Serif"))
+
+#+ ggtitle("Principal Components Analysis: IPNW insurance loss by county with \ndamage cause loadings: 2001 to 2022") 
 
 par(mar=c(8, 6.1, 4, 2.1), family = 'serif', mgp=c(4, 1, 0), las=0)
 
@@ -2548,7 +2565,9 @@ prop_varex$prop_varex <- as.numeric(prop_varex$prop_varex)
 p <- ggplot(prop_varex, aes(as.factor(comp), prop_varex, group=1))
 plot2 <- p + geom_point(shape = 21) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5)) +
   xlab("comp") + theme_bw() +
-stat_summary(fun.y=sum, geom="line") + labs(title = "Scree plot of insurance loss for the inland PNW, for all commodities by county, with \ndamage cause as the factor loadings.", x = "principal components", y = "% explained variance")
+stat_summary(fun.y=sum, geom="line") + labs( x = "principal components", y = "% explained variance")
+
+#title = "Scree plot of insurance loss for the inland PNW, for all commodities by county, with \ndamage cause as the factor loadings.",
 
 grid.arrange(plot1, plot2, nrow=2, heights=c(2,1))
 
@@ -2591,7 +2610,10 @@ RMA_damage_PNW_exogenous_month <- RMA_damage_PNW_transformed_month[,2:10]
 
 #PNW using month as group - with damage cause as loadings
 fit <- princomp(RMA_damage_PNW_exogenous_month, cor=TRUE)
-plot1 <- ggplot2::autoplot(prcomp(RMA_damage_PNW_exogenous_month, center = TRUE, scale = TRUE),  data = RMA_damage_PNW_transformed_month, loadings = TRUE, loadings.label = TRUE, loadings.label.size  = 3, label = FALSE, label.size = 2, legend = FALSE)  + theme_bw()   + geom_text(vjust=-1, label=rownames(RMA_damage_PNW_exogenous_month)) + theme(legend.position = "none") + ggtitle("Principal Components Analysis: iPNW insurance loss by month with damage cause loadings ") + theme(plot.title = element_text(size =12)) + theme(axis.title.y = element_text(size=12), axis.title.x = element_text(size = 12), axis.text.x = element_text(size=rel(1.5), hjust = 1), axis.text.y = element_text(size=rel(1.5), hjust = 1, family = "Serif"))
+plot1 <- ggplot2::autoplot(prcomp(RMA_damage_PNW_exogenous_month, center = TRUE, scale = TRUE),  data = RMA_damage_PNW_transformed_month, loadings = TRUE, loadings.label = TRUE, loadings.label.size  = 3, label = FALSE, label.size = 2, legend = FALSE)  + theme_bw()   + geom_text(vjust=-1, label=rownames(RMA_damage_PNW_exogenous_month)) + theme(legend.position = "none") + theme(plot.title = element_text(size =12)) + theme(axis.title.y = element_text(size=12), axis.title.x = element_text(size = 12), axis.text.x = element_text(size=rel(1.5), hjust = 1), axis.text.y = element_text(size=rel(1.5), hjust = 1, family = "Serif"))
+
+#+ ggtitle("Principal Components Analysis: iPNW insurance loss by month with damage cause loadings ") 
+
 #scree plot
 
 std_dev <- fit$sdev
@@ -2611,7 +2633,9 @@ prop_varex$prop_varex <- as.numeric(prop_varex$prop_varex)
 p <- ggplot(prop_varex, aes(as.factor(comp), prop_varex, group=1))
 plot2 <- p + geom_point(shape = 21) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5)) +
   xlab("comp") + theme_bw() +
-stat_summary(fun.y=sum, geom="line") + labs(title = "Scree plot: iPNW insurance loss, for all commodities by month, with damage cause \n as the factor loadings. ", x = "principal components", y = "% explained variance")
+stat_summary(fun.y=sum, geom="line") + labs( x = "principal components", y = "% explained variance")
+
+#title = "Scree plot: iPNW insurance loss, for all commodities by month, with damage cause \n as the factor loadings. ",
 
 grid.arrange(plot1, plot2, nrow=2, heights=c(2,1))
 
@@ -2622,63 +2646,63 @@ grid.arrange(plot1, plot2, nrow=2, heights=c(2,1))
 ```{r message=FALSE, warning=FALSE, echo= FALSE, error=TRUE, fig.width = 8, fig.height = 8, fig.cap=paste("Top panel: biplot of insurance loss for the entire PNW, for barley by county, with damage cause as the factor loadings.  Bottom panel: Scree plot. Data from 2001 is 2022 is used.")}
 
 #PNW barley
-
-usePackage("ggplot2")
-usePackage("ggfortify")
-usePackage("reshape2")
-
-
-RMA_IPNW_com <- RMA_IPNW
-
-#PNW damage cause as loadings using years as groups, JUST FOR WHEAT
-RMA_IPNW_com$commodity <- tolower(RMA_IPNW_com$commodity)
-RMA_IPNW_com$commodity <- stri_trans_general(RMA_IPNW_com$commodity, id = "Title")
-RMA_IPNW_com$commodity <- factor(RMA_IPNW_com$commodity)
-
-
-RMA_IPNW_com <- RMA_IPNW_com[RMA_IPNW_com$damagecause == c("Drought", "Decline in Price", "Heat", "Freeze", "Frost", "Cold Wet Weather", "Hail", "Excess Moisture/Precipitation/Rain", "Cold Winter", "Plant Disease"),]
-
-RMA_damage_PNW_barley <- subset(RMA_IPNW_com, commodity == "Barley")
-
-RMA_damage_PNW_transformed_barley <- dcast(RMA_damage_PNW_barley, county + state ~ damagecause, value.var = c("loss"), sum)
-RMA_damage_PNW_transformed_barley$statecounty <- paste(RMA_damage_PNW_transformed_barley$county, "_", RMA_damage_PNW_transformed_barley$state, sep="")
-rownames(RMA_damage_PNW_transformed_barley) <- RMA_damage_PNW_transformed_barley$statecounty
-RMA_damage_PNW_exogenous_barley <- RMA_damage_PNW_transformed_barley[,3:10]
-#RMA_damage_PNW_exogenous_barley <- RMA_damage_PNW_transformed_barley
-
-#RMA_damage_PNW_exogenous_barley <- cbind(RMA_damage_PNW_exogenous_barley[,3:4], RMA_damage_PNW_exogenous_barley[7], RMA_damage_PNW_exogenous_barley[9], RMA_damage_PNW_exogenous_barley[,12:15], RMA_damage_PNW_exogenous_barley[17:18])
-
-fit <- princomp(RMA_damage_PNW_exogenous_barley, cor=TRUE)
-
-#PNW barley
-
-#ggplot2::autoplot(prcomp(RMA_damage_PNW_exogenous_barley), data = RMA_damage_PNW_transformed_barley, colour = 'county', loadings = TRUE, loadings.label = TRUE, loadings.label.size  = 3, label = FALSE, label.size = 3, legend = FALSE) + geom_text(vjust=-1, label=rownames(RMA_damage_PNW_exogenous_barley)) + theme(legend.position = "none")
-
-plot1 <- ggplot2::autoplot(prcomp(RMA_damage_PNW_exogenous_barley, center = TRUE, scale = TRUE), data = RMA_damage_PNW_transformed_barley,  loadings = TRUE, loadings.label = TRUE, colour = "state", loadings.label.size  = 3, label = FALSE, label.size = 2, legend = FALSE,loadings.label.repel=TRUE)  + theme_bw()   + ggrepel::geom_text_repel(label=rownames(RMA_damage_PNW_exogenous_barley), size=3) + theme(legend.position = "none") + ggtitle("Principal Components Analysis: iPNW barley insurance loss by county with \ndamage cause loadings ") + theme(plot.title = element_text(size =12, family = "Serif")) + theme(axis.title.y = element_text(family = "Serif", size=12), axis.title.x = element_text(family = "Serif", size = 12), axis.text.x = element_text(size=rel(1.5), hjust = 1, family = "Serif"), axis.text.y = element_text(size=rel(1.5), hjust = 1, family = "Serif"))
-
-
-#scree plot
-
-std_dev <- fit$sdev
-
-pr_var <- std_dev^2
-
-#pr_var[1:10]
-
-prop_varex <- pr_var/sum(pr_var)
-
-prop_varex <- data.frame(prop_varex)
-
-prop_varex$comp <- c(1:max(nrow(prop_varex)))
-
-prop_varex$prop_varex <- as.numeric(prop_varex$prop_varex)
-
-p <- ggplot(prop_varex, aes(as.factor(comp), prop_varex, group=1))
-plot2 <- p + geom_point(shape = 21) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5)) +
-  xlab("comp") + theme_bw() +
-stat_summary(fun.y=sum, geom="line") + labs(title = "Scree plot: insurance loss for the entire iPNW, for barley by county, with \ndamage cause as the factor loadings.", x = "principal components", y = "% explained variance")
-
-grid.arrange(plot1, plot2, nrow=2, heights=c(2,1))
+# 
+# usePackage("ggplot2")
+# usePackage("ggfortify")
+# usePackage("reshape2")
+# 
+# 
+# RMA_IPNW_com <- RMA_IPNW
+# 
+# #PNW damage cause as loadings using years as groups, JUST FOR WHEAT
+# RMA_IPNW_com$commodity <- tolower(RMA_IPNW_com$commodity)
+# RMA_IPNW_com$commodity <- stri_trans_general(RMA_IPNW_com$commodity, id = "Title")
+# RMA_IPNW_com$commodity <- factor(RMA_IPNW_com$commodity)
+# 
+# 
+# RMA_IPNW_com <- RMA_IPNW_com[RMA_IPNW_com$damagecause == c("Drought", "Decline in Price", "Heat", "Freeze", "Frost", "Cold Wet Weather", "Hail", "Excess Moisture/Precipitation/Rain", "Cold Winter", "Plant Disease"),]
+# 
+# RMA_damage_PNW_barley <- subset(RMA_IPNW_com, commodity == "Barley")
+# 
+# RMA_damage_PNW_transformed_barley <- dcast(RMA_damage_PNW_barley, county + state ~ damagecause, value.var = c("loss"), sum)
+# RMA_damage_PNW_transformed_barley$statecounty <- paste(RMA_damage_PNW_transformed_barley$county, "_", RMA_damage_PNW_transformed_barley$state, sep="")
+# rownames(RMA_damage_PNW_transformed_barley) <- RMA_damage_PNW_transformed_barley$statecounty
+# RMA_damage_PNW_exogenous_barley <- RMA_damage_PNW_transformed_barley[,3:10]
+# #RMA_damage_PNW_exogenous_barley <- RMA_damage_PNW_transformed_barley
+# 
+# #RMA_damage_PNW_exogenous_barley <- cbind(RMA_damage_PNW_exogenous_barley[,3:4], RMA_damage_PNW_exogenous_barley[7], RMA_damage_PNW_exogenous_barley[9], RMA_damage_PNW_exogenous_barley[,12:15], RMA_damage_PNW_exogenous_barley[17:18])
+# 
+# fit <- princomp(RMA_damage_PNW_exogenous_barley, cor=TRUE)
+# 
+# #PNW barley
+# 
+# #ggplot2::autoplot(prcomp(RMA_damage_PNW_exogenous_barley), data = RMA_damage_PNW_transformed_barley, colour = 'county', loadings = TRUE, loadings.label = TRUE, loadings.label.size  = 3, label = FALSE, label.size = 3, legend = FALSE) + geom_text(vjust=-1, label=rownames(RMA_damage_PNW_exogenous_barley)) + theme(legend.position = "none")
+# 
+# plot1 <- ggplot2::autoplot(prcomp(RMA_damage_PNW_exogenous_barley, center = TRUE, scale = TRUE), data = RMA_damage_PNW_transformed_barley,  loadings = TRUE, loadings.label = TRUE, colour = "state", loadings.label.size  = 3, label = FALSE, label.size = 2, legend = FALSE,loadings.label.repel=TRUE)  + theme_bw()   + ggrepel::geom_text_repel(label=rownames(RMA_damage_PNW_exogenous_barley), size=3) + theme(legend.position = "none") + ggtitle("Principal Components Analysis: iPNW barley insurance loss by county with \ndamage cause loadings ") + theme(plot.title = element_text(size =12, family = "Serif")) + theme(axis.title.y = element_text(family = "Serif", size=12), axis.title.x = element_text(family = "Serif", size = 12), axis.text.x = element_text(size=rel(1.5), hjust = 1, family = "Serif"), axis.text.y = element_text(size=rel(1.5), hjust = 1, family = "Serif"))
+# 
+# 
+# #scree plot
+# 
+# std_dev <- fit$sdev
+# 
+# pr_var <- std_dev^2
+# 
+# #pr_var[1:10]
+# 
+# prop_varex <- pr_var/sum(pr_var)
+# 
+# prop_varex <- data.frame(prop_varex)
+# 
+# prop_varex$comp <- c(1:max(nrow(prop_varex)))
+# 
+# prop_varex$prop_varex <- as.numeric(prop_varex$prop_varex)
+# 
+# p <- ggplot(prop_varex, aes(as.factor(comp), prop_varex, group=1))
+# plot2 <- p + geom_point(shape = 21) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5)) +
+#   xlab("comp") + theme_bw() +
+# stat_summary(fun.y=sum, geom="line") + labs(title = "Scree plot: insurance loss for the entire iPNW, for barley by county, with \ndamage cause as the factor loadings.", x = "principal components", y = "% explained variance")
+# 
+# grid.arrange(plot1, plot2, nrow=2, heights=c(2,1))
 
 ```
 
@@ -2722,7 +2746,9 @@ RMA_damage_PNW_exogenous_wheat <- RMA_damage_PNW_transformed_wheat[,3:10]
 fit <- princomp(RMA_damage_PNW_exogenous_wheat, cor=TRUE)
 #ggplot2::autoplot(prcomp(RMA_damage_PNW_exogenous_wheat, scale = TRUE, center = TRUE), data = RMA_damage_PNW_transformed_wheat, colour = 'county', loadings = TRUE, loadings.label = TRUE, loadings.label.size  = 3, label = FALSE, label.size = 3, legend = FALSE) + geom_text(vjust=-1, label=rownames(RMA_damage_PNW_exogenous_wheat)) + theme(legend.position = "none")
 
-plot1 <- ggplot2::autoplot(prcomp(RMA_damage_PNW_exogenous_wheat, center = TRUE, scale = TRUE), data = RMA_damage_PNW_transformed_wheat, loadings = TRUE, loadings.label = TRUE, colour="state", loadings.label.size  = 3, label = FALSE, label.size = 2, legend = FALSE)  + theme_bw()   + ggrepel::geom_text_repel( label=rownames(RMA_damage_PNW_exogenous_wheat), size=3) + theme(legend.position = "none") + ggtitle("Principal Components Analysis: iPNW wheat insurance loss by county with \ndamage cause loadings ") + theme(plot.title = element_text(size =12, family = "Serif")) + theme(axis.title.y = element_text(family = "Serif", size=12), axis.title.x = element_text(family = "Serif", size = 12), axis.text.x = element_text(size=rel(1.5), hjust = 1, family = "Serif"), axis.text.y = element_text(size=rel(1.5), hjust = 1, family = "Serif"))
+plot1 <- ggplot2::autoplot(prcomp(RMA_damage_PNW_exogenous_wheat, center = TRUE, scale = TRUE), data = RMA_damage_PNW_transformed_wheat, loadings = TRUE, loadings.label = TRUE, colour="state", loadings.label.size  = 3, label = FALSE, label.size = 2, legend = FALSE)  + theme_bw()   + ggrepel::geom_text_repel( label=rownames(RMA_damage_PNW_exogenous_wheat), size=3) + theme(legend.position = "none") + theme(plot.title = element_text(size =12, family = "Serif")) + theme(axis.title.y = element_text(family = "Serif", size=12), axis.title.x = element_text(family = "Serif", size = 12), axis.text.x = element_text(size=rel(1.5), hjust = 1, family = "Serif"), axis.text.y = element_text(size=rel(1.5), hjust = 1, family = "Serif"))
+
+#+ ggtitle("Principal Components Analysis: iPNW wheat insurance loss by county with \ndamage cause loadings ") 
 
 
 #scree plot
@@ -2744,7 +2770,9 @@ prop_varex$prop_varex <- as.numeric(prop_varex$prop_varex)
 p <- ggplot(prop_varex, aes(as.factor(comp), prop_varex, group=1))
 plot2 <- p + geom_point(shape = 21) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5)) +
   xlab("comp") + theme_bw() +
-stat_summary(fun.y=sum, geom="line") + labs(title = "Scree plot: insurance loss for the entire iPNW, for wheat by county, with \ndamage cause as the factor loadings.", x = "principal components", y = "% explained variance")
+stat_summary(fun.y=sum, geom="line") + labs( x = "principal components", y = "% explained variance")
+
+#title = "Scree plot: insurance loss for the entire iPNW, for wheat by county, with \ndamage cause as the factor loadings.",
 
 grid.arrange(plot1, plot2, nrow=2, heights=c(2,1))
 
@@ -2786,7 +2814,9 @@ fit <- princomp(RMA_damage_PNW_exogenous_apples, cor=TRUE)
 
 #ggplot2::autoplot(prcomp(RMA_damage_PNW_exogenous_apples), data = RMA_damage_PNW_transformed_apples, colour = 'county', loadings = TRUE, loadings.label = TRUE, loadings.label.size  = 3, label = FALSE, label.size = 3, legend = FALSE) + geom_text(vjust=-1, label=rownames(RMA_damage_PNW_exogenous_apples)) + theme(legend.position = "none")
 
-plot1 <- ggplot2::autoplot(prcomp(RMA_damage_PNW_exogenous_apples, center = TRUE, scale = TRUE), data = RMA_damage_PNW_transformed_apples, loadings = TRUE, loadings.label = TRUE, colour="state", loadings.label.size  = 3, label = FALSE, label.size = 2, legend = FALSE, loadings.label.repel=TRUE)  + theme_bw()   + ggrepel::geom_text_repel(label=rownames(RMA_damage_PNW_exogenous_apples), size=3) + theme(legend.position = "none") + ggtitle("Principal Components Analysis: iPNW apples insurance loss by county with \ndamage cause loadings ") + theme(plot.title = element_text(size =12, family = "Serif")) + theme(axis.title.y = element_text(family = "Serif", size=12), axis.title.x = element_text(family = "Serif", size = 12), axis.text.x = element_text(size=rel(1.5), hjust = 1, family = "Serif"), axis.text.y = element_text(size=rel(1.5), hjust = 1, family = "Serif"))
+plot1 <- ggplot2::autoplot(prcomp(RMA_damage_PNW_exogenous_apples, center = TRUE, scale = TRUE), data = RMA_damage_PNW_transformed_apples, loadings = TRUE, loadings.label = TRUE, colour="state", loadings.label.size  = 3, label = FALSE, label.size = 2, legend = FALSE, loadings.label.repel=TRUE)  + theme_bw()   + ggrepel::geom_text_repel(label=rownames(RMA_damage_PNW_exogenous_apples), size=3) + theme(legend.position = "none") + theme(plot.title = element_text(size =12, family = "Serif")) + theme(axis.title.y = element_text(family = "Serif", size=12), axis.title.x = element_text(family = "Serif", size = 12), axis.text.x = element_text(size=rel(1.5), hjust = 1, family = "Serif"), axis.text.y = element_text(size=rel(1.5), hjust = 1, family = "Serif"))
+
+#+ ggtitle("Principal Components Analysis: iPNW apples insurance loss by county with \ndamage cause loadings ") 
 
 
 #scree plot
@@ -2808,7 +2838,9 @@ prop_varex$prop_varex <- as.numeric(prop_varex$prop_varex)
 p <- ggplot(prop_varex, aes(as.factor(comp), prop_varex, group=1))
 plot2 <- p + geom_point(shape = 21) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5)) +
   xlab("comp") + theme_bw() +
-stat_summary(fun.y=sum, geom="line") + labs(title = "Scree plot: insurance loss for the entire iPNW, for apples by county, with \n damage cause as the factor loadings.", x = "principal components", y = "% explained variance")
+stat_summary(fun.y=sum, geom="line") + labs( x = "principal components", y = "% explained variance")
+
+#title = "Scree plot: insurance loss for the entire iPNW, for apples by county, with \n damage cause as the factor loadings.",
 
 grid.arrange(plot1, plot2, nrow=2, heights=c(2,1))
 
@@ -2986,7 +3018,9 @@ palette(alpha(brewer.pal(9,'Set2'), 1))
 kclust <- data.frame(k$clust)
 kclust$k.clust <- factor(kclust$k.clust)
 
-plot1 <- ggplot2::autoplot(prcomp(RMA_damage_PNW_exogenous_wheat_year, center = TRUE, scale = TRUE),data = kclust, colour = 'k.clust',   loadings = TRUE, loadings.label = TRUE, loadings.label.size  = 4, label = FALSE, label.size = 2, legend = FALSE,loadings.label.repel=TRUE)  +  theme_bw()   + ggrepel::geom_text_repel(label=rownames(RMA_damage_PNW_exogenous_wheat_year), segment.colour = NA, size=4) + theme(legend.position = "none") + ggtitle("Principal Components Analysis: iPNW wheat insurance loss by year with \ndamage cause loadings ") + theme(plot.title = element_text(size =12, family = "Serif")) + theme(axis.title.y = element_text(family = "Serif", size=12), axis.title.x = element_text(family = "Serif", size = 12), axis.text.x = element_text(size=rel(1.5), hjust = 1, family = "Serif"), axis.text.y = element_text(size=rel(1.5), hjust = 1, family = "Serif")) + ggforce::geom_mark_ellipse(aes(color = k.clust)) + theme(legend.position = 'bottom') + coord_equal(ylim = c(-.7, .8), xlim = c(-.7, .8))
+plot1 <- ggplot2::autoplot(prcomp(RMA_damage_PNW_exogenous_wheat_year, center = TRUE, scale = TRUE),data = kclust, colour = 'k.clust',   loadings = TRUE, loadings.label = TRUE, loadings.label.size  = 4, label = FALSE, label.size = 2, legend = FALSE,loadings.label.repel=TRUE)  +  theme_bw()   + ggrepel::geom_text_repel(label=rownames(RMA_damage_PNW_exogenous_wheat_year), segment.colour = NA, size=4) + theme(legend.position = "none")  + theme(plot.title = element_text(size =12, family = "Serif")) + theme(axis.title.y = element_text(family = "Serif", size=12), axis.title.x = element_text(family = "Serif", size = 12), axis.text.x = element_text(size=rel(1.5), hjust = 1, family = "Serif"), axis.text.y = element_text(size=rel(1.5), hjust = 1, family = "Serif")) + ggforce::geom_mark_ellipse(aes(color = k.clust)) + theme(legend.position = 'bottom') + coord_equal(ylim = c(-.7, .8), xlim = c(-.7, .8))
+
+#+ ggtitle("Principal Components Analysis: iPNW wheat insurance loss by year with \ndamage cause loadings ")
 
 
 
@@ -3009,14 +3043,16 @@ prop_varex$prop_varex <- as.numeric(prop_varex$prop_varex)
 p <- ggplot(prop_varex, aes(as.factor(comp), prop_varex, group=1))
 plot2 <- p + geom_point(shape = 21) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5)) +
   xlab("comp") + theme_bw() +
-stat_summary(fun.y=sum, geom="line") + labs(title = "Scree plot: insurance loss for the entire iPNW, for wheat by year, with \ndamage cause as the factor loadings.", x = "principal components", y = "% explained variance")
+stat_summary(fun.y=sum, geom="line") + labs( x = "principal components", y = "% explained variance")
+
+#title = "Scree plot: insurance loss for the entire iPNW, for wheat by year, with \ndamage cause as the factor loadings.",
 
 grid.arrange(plot1, plot2, nrow=2, heights=c(2,1))
 
 
 ```
 
-
+\newpage
 
 ```{r message=FALSE, warning=FALSE, echo= FALSE, error=TRUE, fig.width = 8, fig.height = 8, fig.cap=paste("Top panel: biplot of insurance loss for the iPNW, for wheat by county, with damage cause as the factor loadings.  Uses a Kmeans technique for grouping. Bottom panel: Scree plot. Data from 2001 is 2022 is used.")}
 
@@ -3039,7 +3075,9 @@ kclust$k.clust <- factor(kclust$k.clust)
 # plot1 <- ggplot2::autoplot(prcomp(RMA_damage_IPNW_exogenous_factor, scale = TRUE, center = TRUE), frame = TRUE, frame.type = 'norm', data = kclust, colour = 'k.clust', loadings = TRUE, loadings.label = TRUE, loadings.label.size  = 3, label = FALSE, label.size = 3, legend = FALSE,loadings.label.repel=TRUE)  + theme_bw()   + ggrepel::geom_text_repel(label=rownames(RMA_damage_IPNW_exogenous), size=2) + theme(legend.position = "none") + ggtitle("Principal Components Analysis: iPNW insurance loss\nby county with damage cause loadings + Kmeans clustering method") + theme(plot.title = element_text(size =12, family = "Serif")) + theme(axis.title.y = element_text(family = "Serif", size=12), axis.title.x = element_text(family = "Serif", size = 12), axis.text.x = element_text(size=rel(1.5), hjust = 1, family = "Serif"), axis.text.y = element_text(size=rel(1.5), hjust = 1, family = "Serif"))  + theme(legend.position="bottom") 
 
 
-plot1 <- ggplot2::autoplot(prcomp(RMA_damage_IPNW_exogenous_factor, center = TRUE, scale = TRUE),data = kclust, colour = 'k.clust',   loadings = TRUE, loadings.label = TRUE, loadings.label.size  = 4, label = FALSE, label.size = 2, legend = FALSE,loadings.label.repel=TRUE)  +  theme_bw()   + ggrepel::geom_text_repel(label=rownames(RMA_damage_IPNW_exogenous_factor), segment.colour = NA, size=4) + theme(legend.position = "none") + ggtitle("Principal Components Analysis: iPNW insurance loss\nby county with damage cause loadings + Kmeans clustering method ") + theme(plot.title = element_text(size =12, family = "Serif")) + theme(axis.title.y = element_text(family = "Serif", size=12), axis.title.x = element_text(family = "Serif", size = 12), axis.text.x = element_text(size=rel(1.5), hjust = 1, family = "Serif"), axis.text.y = element_text(size=rel(1.5), hjust = 1, family = "Serif")) + ggforce::geom_mark_ellipse(aes(color = k.clust)) + theme(legend.position = 'bottom') + coord_equal(xlim = c(-.50, .8), ylim=c(-.70, .60))
+plot1 <- ggplot2::autoplot(prcomp(RMA_damage_IPNW_exogenous_factor, center = TRUE, scale = TRUE),data = kclust, colour = 'k.clust',   loadings = TRUE, loadings.label = TRUE, loadings.label.size  = 4, label = FALSE, label.size = 2, legend = FALSE,loadings.label.repel=TRUE)  +  theme_bw()   + ggrepel::geom_text_repel(label=rownames(RMA_damage_IPNW_exogenous_factor), segment.colour = NA, size=4) + theme(legend.position = "none")  + theme(plot.title = element_text(size =12, family = "Serif")) + theme(axis.title.y = element_text(family = "Serif", size=12), axis.title.x = element_text(family = "Serif", size = 12), axis.text.x = element_text(size=rel(1.5), hjust = 1, family = "Serif"), axis.text.y = element_text(size=rel(1.5), hjust = 1, family = "Serif")) + ggforce::geom_mark_ellipse(aes(color = k.clust)) + theme(legend.position = 'bottom') + coord_equal(xlim = c(-.50, .8), ylim=c(-.70, .60))
+
+#+ ggtitle("Principal Components Analysis: iPNW insurance loss\nby county with damage cause loadings + Kmeans clustering method ")
 
 #scree plot
 
@@ -3060,7 +3098,270 @@ prop_varex$prop_varex <- as.numeric(prop_varex$prop_varex)
 p <- ggplot(prop_varex, aes(as.factor(comp), prop_varex, group=1))
 plot2 <- p + geom_point(shape = 21) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5)) +
   xlab("comp") + theme_bw() +
-stat_summary(fun.y=sum, geom="line") + labs(title = "Scree plot of insurance loss for the inland iPNW, for wheat by county, with \ndamage cause as the factor loadings.", x = "principal components", y = "% explained variance")
+stat_summary(fun.y=sum, geom="line") + labs( x = "principal components", y = "% explained variance")
+
+#title = "Scree plot of insurance loss for the inland iPNW, for wheat by county, with \ndamage cause as the factor loadings.",
+
+grid.arrange(plot1, plot2, nrow=2, heights=c(2,1))
+
+
+```
+
+
+
+```{r message=FALSE, warning=FALSE, echo= FALSE, error=TRUE, fig.cap=paste("Using the results of our PCA for wheat by county, with damage cause as the factor loadings, we generate a scree plot that shows the proportion of variance explained by the individual components.")}
+
+#just the IPNW
+
+usePackage("ggplot2")
+usePackage("ggfortify")
+usePackage("reshape2")
+
+
+RMA_damage_IPNW_com <- RMA_damage_IPNW
+
+#PNW damage cause as loadings using years as groups, JUST FOR WHEAT
+RMA_damage_IPNW_com$commodity <- tolower(RMA_damage_IPNW_com$commodity)
+RMA_damage_IPNW_com$commodity <- stri_trans_general(RMA_damage_IPNW_com$commodity, id = "Title")
+RMA_damage_IPNW_com$commodity <- factor(RMA_damage_IPNW_com$commodity)
+
+
+RMA_damage_IPNW_com <- RMA_damage_IPNW_com[RMA_damage_IPNW_com$damagecause == c("Drought", "Decline in Price", "Heat", "Freeze", "Frost", "Cold Wet Weather", "Hail", "Excess Moisture/Precipitation/Rain", "Cold Winter", "Plant Disease"),]
+
+
+
+RMA_damage_IPNW_com$log10loss <- log10(RMA_damage_IPNW_com$loss)
+
+
+RMA_damage_IPNW_wheat <- subset(RMA_damage_IPNW_com, commodity == "Apples")
+RMA_damage_IPNW_transformed <- dcast(RMA_damage_IPNW_wheat, county + state ~ damagecause, value.var = c("loss"), sum)
+RMA_damage_IPNW_transformed$statecounty <- paste(RMA_damage_IPNW_transformed$county, "_", RMA_damage_IPNW_transformed$state, sep="")
+rownames(RMA_damage_IPNW_transformed) <- RMA_damage_IPNW_transformed$statecounty
+RMA_damage_IPNW_exogenous <- RMA_damage_IPNW_transformed[,3:8]
+
+
+#IPNW
+
+#RMA_damage_IPNW_exogenous <- scale(RMA_damage_IPNW_exogenous, scale = TRUE, center = TRUE)
+pca_RMA_damage_IPNW_exogenous <- prcomp(RMA_damage_IPNW_exogenous, scale = TRUE, center = TRUE)
+
+#RMA_damage_IPNW_exogenous_factor <- cbind(RMA_damage_IPNW_exogenous[2:3], RMA_damage_IPNW_exogenous[5:6], RMA_damage_IPNW_exogenous[8], RMA_damage_IPNW_exogenous[11], RMA_damage_IPNW_exogenous[13:14], RMA_damage_IPNW_exogenous[16:17])
+
+
+RMA_damage_IPNW_exogenous_factor <- RMA_damage_IPNW_exogenous
+fit <- prcomp(RMA_damage_IPNW_exogenous_factor, cor=TRUE, center = TRUE, scale = TRUE)
+
+comp <- data.frame(fit$x[,1:2])
+# Plot
+#plot(comp, pch=16, col=rgb(0,0,0,0.5))
+
+
+wss <- (nrow(RMA_damage_IPNW_exogenous_factor)-1)*sum(apply(RMA_damage_IPNW_exogenous_factor,2,var))
+for (i in 1:6) wss[i] <- sum(kmeans(RMA_damage_IPNW_exogenous_factor,
+                                     centers=i)$withinss)
+#plot(1:23, wss, type="b", xlab="Number of Clusters", yaxt = "n", 
+#     ylab="Within groups sum of squares", main = "KMeans COUNTIES Elbow Plot")
+#axis(2, las = 1, at = wss, cex.axis = 1, labels = paste(round(wss/100000000000000, 0), "M", sep = ""))
+
+```
+\newpage
+
+
+
+
+``` {r, warning = FALSE, echo= FALSE, message = FALSE, fig.show = 'hide', results = 'hide'}
+
+#``` {r, warning = FALSE, echo= FALSE, message = FALSE, results='hide',fig.keep='all', fig.width = 8, fig.height = 8, fig.cap=paste("Top panel: biplot of insurance loss for the inland PNW, for all commodities by county, with damage cause as the factor loadings.  Bottom panel: Scree plot. Data from 2001 is 2022 is used")}
+
+  #identify the optimum number of clusters using NbClust
+  par(mar=c(1,1,1,1))
+  usePackage("NbClust")
+  usePackage("factoextra")
+  
+  clustering_distance <- c("euclidean")
+ clust<-NbClust(fit$x[,1:3], diss=NULL, distance = clustering_distance, min.nc=2, max.nc=5, method = "kmeans", index = "all")
+
+
+  #clust<-NbClust(damage_loss[,1:(length(waterscarcity)-4)], diss=NULL, distance = clustering_distance, min.nc=2, max.nc=20, method = "kmeans", index = "dindex") 
+  
+  #res$All.index
+  #res$Best.nc
+  #res$All.CriticalValues
+  #res$Best.partition
+  
+  maxclusters <- length(unique(clust$Best.partition))
+  km.res <- kmeans(fit$x[,1:2], maxclusters, nstart = 25)
+  #pam.res <- pam(damage_loss, maxclusters)
+  hc.cut <- hcut(fit$x[,1:2], k = maxclusters, hc_method = "ward.D2")
+
+```
+\newpage
+
+
+
+``` {r, warning = FALSE, echo= FALSE, message = FALSE, fig.show = 'hide', results = 'hide'}
+
+  #identify the optimum number of clusters using NbClust
+  par(mar=c(1,1,1,1))
+  usePackage("NbClust")
+  usePackage("factoextra")
+  
+  clustering_distance <- c("euclidean")
+ clust<-NbClust(fit$x[,1:3], diss=NULL, distance = clustering_distance, min.nc=2, max.nc=5, method = "kmeans", index = "all")
+  par(mfrow=c(1,1))  
+  
+```
+\newpage
+
+```{r message=FALSE, warning=FALSE, echo= FALSE, error=TRUE, results = 'hide', fig.width = 8, fig.height = 8, fig.cap=paste("Hierarchical clustering dendrogram of Inland Pacific Northwest counties, using the first two principal components of the aforementioned dimensionality reduction exercise. This clustering method provides an alternative approach as compared to Kmeans clustering.")}
+
+par(mar=c(8, 6.1, 4, 2.1), family = 'serif', mgp=c(4, 1, 0), las=0)
+
+#plot(hc.cut, cex = 1, xlab = "Counties") # plot tree
+#rect.hclust(hc.cut, k = maxclusters, border = 2:5) # add rectangle
+
+usePackage("mclust")
+d_clust <- Mclust(RMA_damage_IPNW_exogenous_factor, G=1:7, 
+                  modelNames = mclust.options("emModelNames"))
+#d_clust$BIC
+#plot(d_clust, what = c("BIC"))
+
+
+```
+
+
+
+
+```{r message=FALSE, warning=FALSE, echo= FALSE, error=TRUE, fig.width = 8, fig.height = 8, fig.cap=paste("Top panel: biplot of insurance loss for the entire iPNW, for wheat by year, with damage cause as the factor loadings. Bottom panel: Scree plot. Data from 2001 is 2022 is used.")}
+
+usePackage("ggplot2")
+usePackage("ggfortify")
+usePackage("reshape2")
+
+RMA_IPNW_com <- RMA_IPNW
+
+#PNW damage cause as loadings using years as groups, JUST FOR WHEAT
+RMA_IPNW_com$commodity <- tolower(RMA_IPNW_com$commodity)
+RMA_IPNW_com$commodity <- stri_trans_general(RMA_IPNW_com$commodity, id = "Title")
+RMA_IPNW_com$commodity <- factor(RMA_IPNW_com$commodity)
+
+
+RMA_IPNW_com <- RMA_IPNW_com[RMA_IPNW_com$damagecause == c("Drought", "Decline in Price", "Heat", "Freeze", "Frost", "Cold Wet Weather", "Hail", "Excess Moisture/Precipitation/Rain", "Cold Winter", "Plant Disease"),]
+
+RMA_damage_PNW_wheat_year <- subset(RMA_IPNW_com, commodity == "Apples")
+
+
+
+RMA_damage_PNW_transformed_wheat_year <- dcast(RMA_damage_PNW_wheat_year, year ~ damagecause, value.var = c("loss"), sum)
+#RMA_damage_PNW_transformed_year$statecounty <- paste(RMA_damage_PNW_transformed_year$county, "_", RMA_damage_PNW_transformed_year$state, sep="")
+rownames(RMA_damage_PNW_transformed_wheat_year) <- RMA_damage_PNW_transformed_wheat_year$year
+RMA_damage_PNW_exogenous_wheat_year <- RMA_damage_PNW_transformed_wheat_year
+par(mar=c(8, 6.1, 4, 2.1), family = 'serif', mgp=c(4, 1, 0), las=0)
+
+#PNW using year as group - with damage cause as loadings: JUST FOR WHEAT
+
+#RMA_damage_PNW_exogenous_wheat_year_factor <- cbind(RMA_damage_PNW_exogenous_wheat_year[,3:4], RMA_damage_PNW_exogenous_wheat_year[7], RMA_damage_PNW_exogenous_wheat_year[9], RMA_damage_PNW_exogenous_wheat_year[,12:15], RMA_damage_PNW_exogenous_wheat_year[17:18])
+fit <- princomp(RMA_damage_PNW_exogenous_wheat_year, cor=TRUE)
+fit2 <- prcomp(RMA_damage_PNW_exogenous_wheat_year, cor=TRUE, center = TRUE, scale = TRUE)
+
+comp <- data.frame(fit2$x[,1:2])
+
+
+usePackage("RColorBrewer")
+usePackage("scales")
+
+k <- kmeans(comp, 2, nstart=25, iter.max=1000)
+
+palette(alpha(brewer.pal(9,'Set2'), 1))
+#plot(comp, col=k$clust, pch=2)
+
+
+kclust <- data.frame(k$clust)
+kclust$k.clust <- factor(kclust$k.clust)
+
+plot1 <- ggplot2::autoplot(prcomp(RMA_damage_PNW_exogenous_wheat_year, center = TRUE, scale = TRUE),data = kclust, colour = 'k.clust',   loadings = TRUE, loadings.label = TRUE, loadings.label.size  = 4, label = FALSE, label.size = 2, legend = FALSE,loadings.label.repel=TRUE)  +  theme_bw()   + ggrepel::geom_text_repel(label=rownames(RMA_damage_PNW_exogenous_wheat_year), segment.colour = NA, size=4) + theme(legend.position = "none")  + theme(plot.title = element_text(size =12, family = "Serif")) + theme(axis.title.y = element_text(family = "Serif", size=12), axis.title.x = element_text(family = "Serif", size = 12), axis.text.x = element_text(size=rel(1.5), hjust = 1, family = "Serif"), axis.text.y = element_text(size=rel(1.5), hjust = 1, family = "Serif")) + ggforce::geom_mark_ellipse(aes(color = k.clust)) + theme(legend.position = 'bottom') + coord_equal(ylim = c(-.7, .8), xlim = c(-.7, .8))
+
+#+ ggtitle("Principal Components Analysis: iPNW wheat insurance loss by year with \ndamage cause loadings ")
+
+
+
+#scree plot
+
+std_dev <- fit$sdev
+
+pr_var <- std_dev^2
+
+#pr_var[1:10]
+
+prop_varex <- pr_var/sum(pr_var)
+
+prop_varex <- data.frame(prop_varex)
+
+prop_varex$comp <- c(1:max(nrow(prop_varex)))
+
+prop_varex$prop_varex <- as.numeric(prop_varex$prop_varex)
+
+p <- ggplot(prop_varex, aes(as.factor(comp), prop_varex, group=1))
+plot2 <- p + geom_point(shape = 21) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5)) +
+  xlab("comp") + theme_bw() +
+stat_summary(fun.y=sum, geom="line") + labs( x = "principal components", y = "% explained variance")
+
+#title = "Scree plot: insurance loss for the entire iPNW, for wheat by year, with \ndamage cause as the factor loadings.",
+
+grid.arrange(plot1, plot2, nrow=2, heights=c(2,1))
+
+
+```
+
+\newpage
+
+```{r message=FALSE, warning=FALSE, echo= FALSE, error=TRUE, fig.width = 8, fig.height = 8, fig.cap=paste("Top panel: biplot of insurance loss for the iPNW, for wheat by county, with damage cause as the factor loadings.  Uses a Kmeans technique for grouping. Bottom panel: Scree plot. Data from 2001 is 2022 is used.")}
+
+usePackage("RColorBrewer")
+usePackage("scales")
+
+fit <- prcomp(RMA_damage_IPNW_exogenous_factor, cor=TRUE, center = TRUE, scale = TRUE)
+
+comp <- data.frame(fit$x[,1:2])
+
+k <- kmeans(comp, 2, nstart=25, iter.max=1000)
+
+palette(alpha(brewer.pal(9,'Set2'), 1))
+#plot(comp, col=k$clust, pch=2)
+
+
+kclust <- data.frame(k$clust)
+kclust$k.clust <- factor(kclust$k.clust)
+
+# plot1 <- ggplot2::autoplot(prcomp(RMA_damage_IPNW_exogenous_factor, scale = TRUE, center = TRUE), frame = TRUE, frame.type = 'norm', data = kclust, colour = 'k.clust', loadings = TRUE, loadings.label = TRUE, loadings.label.size  = 3, label = FALSE, label.size = 3, legend = FALSE,loadings.label.repel=TRUE)  + theme_bw()   + ggrepel::geom_text_repel(label=rownames(RMA_damage_IPNW_exogenous), size=2) + theme(legend.position = "none") + ggtitle("Principal Components Analysis: iPNW insurance loss\nby county with damage cause loadings + Kmeans clustering method") + theme(plot.title = element_text(size =12, family = "Serif")) + theme(axis.title.y = element_text(family = "Serif", size=12), axis.title.x = element_text(family = "Serif", size = 12), axis.text.x = element_text(size=rel(1.5), hjust = 1, family = "Serif"), axis.text.y = element_text(size=rel(1.5), hjust = 1, family = "Serif"))  + theme(legend.position="bottom") 
+
+
+plot1 <- ggplot2::autoplot(prcomp(RMA_damage_IPNW_exogenous_factor, center = TRUE, scale = TRUE),data = kclust, colour = 'k.clust',   loadings = TRUE, loadings.label = TRUE, loadings.label.size  = 4, label = FALSE, label.size = 2, legend = FALSE,loadings.label.repel=TRUE)  +  theme_bw()   + ggrepel::geom_text_repel(label=rownames(RMA_damage_IPNW_exogenous_factor), segment.colour = NA, size=4) + theme(legend.position = "none") + theme(plot.title = element_text(size =12, family = "Serif")) + theme(axis.title.y = element_text(family = "Serif", size=12), axis.title.x = element_text(family = "Serif", size = 12), axis.text.x = element_text(size=rel(1.5), hjust = 1, family = "Serif"), axis.text.y = element_text(size=rel(1.5), hjust = 1, family = "Serif")) + ggforce::geom_mark_ellipse(aes(color = k.clust)) + theme(legend.position = 'bottom') + coord_equal(xlim = c(-.50, .8), ylim=c(-.70, .60))
+
+#+ ggtitle("Principal Components Analysis: iPNW insurance loss\nby county with damage cause loadings + Kmeans clustering method ") 
+
+#scree plot
+
+std_dev <- fit$sdev
+
+pr_var <- std_dev^2
+
+#pr_var[1:10]
+
+prop_varex <- pr_var/sum(pr_var)
+
+prop_varex <- data.frame(prop_varex)
+
+prop_varex$comp <- c(1:max(nrow(prop_varex)))
+
+prop_varex$prop_varex <- as.numeric(prop_varex$prop_varex)
+
+p <- ggplot(prop_varex, aes(as.factor(comp), prop_varex, group=1))
+plot2 <- p + geom_point(shape = 21) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5)) +
+  xlab("comp") + theme_bw() +
+stat_summary(fun.y=sum, geom="line") + labs( x = "principal components", y = "% explained variance")
+
+#title = "Scree plot of insurance loss for the inland iPNW, for wheat by county, with \ndamage cause as the factor loadings.",
 
 grid.arrange(plot1, plot2, nrow=2, heights=c(2,1))
 
