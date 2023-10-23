@@ -42,7 +42,7 @@ loadfonts()
 
 ```
 
-This supplemental appendix provides exploratory data and factor analyses of agricultural insurance loss for the Pacific Northwest (PNW) and the inland Pacific Northwest (iPNW), to better understand the combined impacts by differing damage causes, commodities, counties, and years.
+This supplemental appendix provides exploratory data and factor analyses of agricultural insurance loss for the Pacific Northwest (PNW) and the inland Pacific Northwest (iPNW) of the United States.
 
 
 \newpage
