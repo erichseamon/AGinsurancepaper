@@ -1,5 +1,5 @@
 ---
-title: 'Supplemental Materials for: Climatic Relationships to Agricultural Insurance Loss for the Pacific Northwest Region of the United States'
+title: 'Supplemental Materials for: Climatic Damage Cause Relationships of Agricultural Insurance Loss for the Pacific Northwest Region of the United States'
 authors: "Erich Seamon, Paul E. Gessler, John T. Abatzoglou, Philip W. Mote, Stephen S. Lee"
 date: "November 2023"
 subtitle: 'The material contained herein is supplementary to the article named in the title and submitted to the journal, Agriculture.' 
