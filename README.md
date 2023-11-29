@@ -31,17 +31,88 @@ Contains .zip file of USDA Risk Management Agency (RMA) .txt files for insurance
 RMA_originaldata.zip: 
 
 
-    Field Names
+    Field Names 1989 - 2000
 
-    * year: year of the insurance loss
-    * state: state where the claims were made
-    * county: county where the claims are made
-    * commodity:  the agricultural commodity associated with the claim
-    * damagecause: the type of damage cause indicated as part of the insurance claim
-    * month: the month the claim was filed
-    * acres: the acreage of the claim (in acres)
-    * loss: the indemnity amount, in dollars, for the claim (dollars)
-    * lossperacre: the ratio of loss per acre (percentage)
+    * commodity year: year of the insurance loss
+    * state code: state where the claims were made
+    * state abbreviation: USPS state abbreviation
+    * county code: county where the claims are made
+    * county name: name of the county
+    * commodity code: RMA code that denotes the commodity for which the policy was issues
+    * commodity name:  the agricultural commodity associated with the claim
+    * insurance plan code: code that denotes the type of insurance coverage for the commodity
+    * insurance plan abbreviation: abbreviation of the insurance plan name
+    * stage code: stage code listing 1898-2000
+    * damage cause code: RMA code that identifies the peril that caused the loss of the commodity
+    * damagecause description: description of the cause of the loss
+    * month of loss: numeric representation of the month the claim was filed
+    * month of loss abbreviation: abbreviation for the name of the month of loss
+    * indemnity amount: total amount of th eloss for the designated peril
+    
+    Field Names 2001 - 2015
+    
+    * commodity year: year of the insurance loss
+    * state code: state where the claims were made
+    * state abbreviation: USPS state abbreviation
+    * county code: county where the claims are made
+    * county name: name of the county
+    * commodity code: RMA code that denotes the commodity for which the policy was issues
+    * commodity name:  the agricultural commodity associated with the claim
+    * insurance plan code: code that denotes the type of insurance coverage for the commodity
+    * insurance plan abbreviation: abbreviation of the insurance plan name
+    * stage code: stage code listing 1898-2000
+    * damage cause code: RMA code that identifies the peril that caused the loss of the commodity
+    * damagecause description: description of the cause of the loss
+    * month of loss: numeric representation of the month the claim was filed
+    * month of loss abbreviation: abbreviation for the name of the month of loss
+    * determined acres: number of acres lost to the damage
+    * indemnity amount: total amount of th eloss for the designated peril
+    
+    Field Names 2016 - 2022
+    
+    * commodity year: year of the insurance loss 
+    * state code: state where the claims were made 
+    * state abbreviation: USPS state abbreviation 
+    * county code: county where the claims are made 
+    * county name: name of the county 
+    * commodity code: RMA code that denotes the commodity for which the policy was issues 
+    * commodity name:  the agricultural commodity associated with the claim 
+    * insurance plan code: code that denotes the type of insurance coverage for the commodity 
+    * insurance plan abbreviation: abbreviation of the insurance plan name 
+    * coverage category: code that identifies the category of coverage elected
+    * stage code: stage code listing 
+    * damage cause code: RMA code that identifies the peril that caused the loss of the commodity 
+    * damagecause description: description of the cause of the loss 
+    * month of loss: numeric representation of the month the claim was filed 
+    * month of loss abbreviation: abbreviation for the name of the month of loss 
+    * year of loss: year the loss occurred
+    * policies earning premium: count of the number of crop policies with a premium
+    * policies indemnified: count of the number of crop policies with a reported loss
+    * net planted quantity: number of acres planted to the the crop after the insured's share is applied
+    * net endorsed acres: number of acres insured under an endorsement
+    * liability: the maximum dollar amount of insurance for the crop
+    * total premium: premium before application of any subsidies
+    * producer paid premium: premium paid by the producer
+    * subsidy: amount of the subsidized premium
+    * state/private subsidy: subsidy provided by the state or private entity
+    * additional subsidy: an additional subsidy from a program or other process
+    * EFA premium discount: EFA discount
+    * net determined quantity: number of acres loss due to damage after the insured's share is applied
+    * indemnity amount: total amount of the loss for the designated peril
+    * determined acres: number of acres lost to the damage
+    * indemnity amount: total amount of the loss for the designated peril
+    
+    In order to consolidate years, the following common fields are renamed used as part of the analysis.  Original variable name are in [ ].
+    
+    * year: year of the loss [commodity year]
+    * state: state abbreviation [state code]
+    * county: county name [county name]
+    * commodity: commodity name [commodity name]
+    * damagecause: description of the cause of the loss [damage cause description]
+    * monthcode: numeric representation of the month the claim was filed [month of loss]
+    * month: abbreviation of the month the claim was filed [month of loss abbreviation]
+    * loss: total amount of the loss for the designated peril [indemnity amount]
+    
 
 
 #### /counties
